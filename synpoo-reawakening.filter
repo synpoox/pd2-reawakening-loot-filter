@@ -29,7 +29,7 @@ ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0Flawless/Low Runes
 ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Gems //Filter Level 5
 ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewel //Filter Level 6
 ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Rare Items //Filter Level 7
-ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Non-Superior Bases //Filter Level 8
+ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Non-Superior Bases/Plain Magic Circlets //Filter Level 8
 ItemDisplayFilterName[]: ÿc![ Very-Strict+ ] ÿc0- ÿc1No ÿc0+3 Magic Items //Filter Level 9
 ItemDisplayFilterName[]: ÿc1[ Ultra-Strict ] ÿc0- ÿc1No ÿc0Magic Large Charms //Filter Level 10
 ItemDisplayFilterName[]: ÿc1[ Ultra-Strict+ ] ÿc0- ÿc1No ÿc0Magic Jewels //Filter Level 11
@@ -1675,6 +1675,11 @@ ItemDisplay[ID (ci0 OR ci1 OR ci2 OR ci3) TABSK48=3]: %GREEN%+3 Sin Trap Circ %C
 ItemDisplay[ID (ci0 OR ci1 OR ci2 OR ci3) TABSK49=3]: %GREEN%+3 Sin Shadow Circ %CONTINUE%
 ItemDisplay[ID (ci0 OR ci1 OR ci2 OR ci3) TABSK50=3]: %GREEN%+3 Sin Martial Arts Circ %CONTINUE%
 
+ItemDisplay[ID EQ7 ((TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3) AND FCR=20)]: %NAME%%PURPLE%FCR
+ItemDisplay[ID EQ7 ((TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3) AND FRW=30)]: %NAME%%PURPLE%FRW
+
+ItemDisplay[EQ7 MAG ID FILTLVL>7 (FCR<20 OR FRW<30) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: // Hide +3 circlets without FCR/FRW at Very-Strict
+
 //+3 Amulets
 ItemDisplay[ID amu TABSK0=3]: %BLUE%+3 Zon Bow %CONTINUE%
 ItemDisplay[ID amu TABSK1=3]: %BLUE%+3 Zon Passive %CONTINUE%
@@ -1728,7 +1733,7 @@ ItemDisplay[ID cm3 TABSK0>0]: %GREEN%Zon Bow %CONTINUE%
 ItemDisplay[ID cm3 TABSK1>0]: %GREEN%Zon Passive %CONTINUE%
 ItemDisplay[ID cm3 TABSK2>0]: %GREEN%Zon Javelin %CONTINUE%
 
-ItemDisplay[ID cm3 TABSK8>0]: %GREEN%Sorc Fire%CONTINUE%
+ItemDisplay[ID cm3 TABSK8>0]: %GREEN%Sorc Fire %CONTINUE%
 ItemDisplay[ID cm3 TABSK9>0]: %GREEN%Sorc Light %CONTINUE%
 ItemDisplay[ID cm3 TABSK10>0]: %GREEN%Sorc Cold %CONTINUE%
 
@@ -1785,6 +1790,7 @@ ItemDisplay[cm2 STAT333>1]: %NAME% %STAT333%% %RED%Fire Pierce LC%CONTINUE%
 ItemDisplay[cm2 STAT334>1]: %NAME% %STAT334%% %YELLOW%Lite Pierce LC%CONTINUE%
 ItemDisplay[cm2 STAT335>1]: %NAME% %STAT335%% %BLUE%Cold Pierce LC%CONTINUE%
 ItemDisplay[cm2 STAT336>1]: %NAME% %STAT336%% %GREEN%Psn Pierce LC%CONTINUE%
+ItemDisplay[cm2 ((STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2 OR STAT357>2 OR STAT333>1 OR STAT334>1 OR STAT335>1 OR STAT336>1) AND LIFE>0)]: %NAME% %RED%+%LIFE% Life%CONTINUE%
 // ItemDisplay[cm2 STR=5]: %NAME% %RED%STR%CONTINUE%
 
 //Good Charms - Small Charms
