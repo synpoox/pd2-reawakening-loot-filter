@@ -165,7 +165,7 @@ ItemDisplay[(tpls OR tplm OR tpll) CLVL>24]: //Hide S8 Throwing Potions - Charge
 
 // Hide Arrows / Bolts
 ItemDisplay[(aqv OR cqv) NMAG CLVL>6]: //Hide White Arrows and Bolts after level 6
-ItemDisplay[cqv (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]: //Hide all bolts on the stricter filter levels
+ItemDisplay[cqv FILTLVL>3]: //Hide all bolts on the stricter filter levels
 
 
 //?                                       ????? Runes ?????                                       ?
@@ -1483,20 +1483,20 @@ ItemDisplay[!(NMAG OR MAG OR RARE OR SET OR UNI)]: %ORANGE%%NAME%%CONTINUE%
 
 //HIDE TRASH
 //EQ1 - Helms
-ItemDisplay[UNI !ID (cap OR skp OR hlm OR fhl OR ghm OR msk OR crn OR bhm OR xap OR xkp OR xlm OR xsk OR xrn OR xhl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]: //Hide low/bad helmets stric filter level
+ItemDisplay[UNI !ID (cap OR skp OR hlm OR fhl OR ghm OR msk OR crn OR bhm OR xap OR xkp OR xlm OR xsk OR xrn OR xhl) FILTLVL>3]: //Hide low/bad helmets stric filter level
 //EQ2 - Body Armor
-ItemDisplay[EQ2 UNI !ID !(xea OR xhn OR xth OR xtp OR xui OR ELT) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]: //Hide low/bad armor filter level 4/5
+ItemDisplay[EQ2 UNI !ID !(xea OR xhn OR xth OR xtp OR xui OR ELT) FILTLVL>3]: //Hide low/bad armor filter level 4/5
 //EQ3 - Shields
-ItemDisplay[UNI !ID (buc OR sml OR lrg OR kit OR spk OR tow OR bsh OR gts OR xuc OR xml OR xrg OR xit OR xpk OR urg OR uml OR upk) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (buc OR sml OR lrg OR kit OR spk OR tow OR bsh OR gts OR xuc OR xml OR xrg OR xit OR xpk OR urg OR uml OR upk) FILTLVL>3]:
 //EQ4 - Gloves
-ItemDisplay[EQ4 UNI !ID !(vgl OR tgl OR xvg OR xmg OR ELT) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
-ItemDisplay[EQ4 UNI !ID (ulg) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[EQ4 UNI !ID !(vgl OR tgl OR xvg OR xmg OR ELT) FILTLVL>3]:
+ItemDisplay[EQ4 UNI !ID (ulg) FILTLVL>3]:
 //EQ6 BELTS
-ItemDisplay[UNI !ID (lbl OR vbl OR mbl OR tbl OR hbl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (lbl OR vbl OR mbl OR tbl OR hbl) FILTLVL>3]:
 //EQ5 BOOTS
-ItemDisplay[EQ5 UNI !ID (vbt OR mbt OR hbt) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[EQ5 UNI !ID (vbt OR mbt OR hbt) FILTLVL>3]:
 //CL3 - PALADIN ITEMS
-ItemDisplay[UNI !ID (pa3 OR pae) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (pa3 OR pae) FILTLVL>3]:
 
 ItemDisplay[ARMOR UNI !ID]: %BORDER-62%%NAME%%MAP-0E%
 
@@ -1506,41 +1506,41 @@ ItemDisplay[ARMOR UNI !ID]: %BORDER-62%%NAME%%MAP-0E%
 
 //HIDE TRASH
 //WP1 - Axes
-ItemDisplay[WP1 UNI !ID !ELT (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP1 UNI !ID !ELT FILTLVL>3]:
 //Elite Unique Axes
-ItemDisplay[UNI !ID (7mp OR 72a OR 7ha OR 7gi) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (7mp OR 72a OR 7ha OR 7gi) FILTLVL>3]:
 //WP2 - MACES
-ItemDisplay[WP2 UNI !ID !(9gm OR 9fl OR ELT) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
-ItemDisplay[WP2 UNI !ID (7cl OR 7sp OR 7mt) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP2 UNI !ID !(9gm OR 9fl OR ELT) FILTLVL>3]:
+ItemDisplay[WP2 UNI !ID (7cl OR 7sp OR 7mt) FILTLVL>3]:
 //WP3 - Swords
-ItemDisplay[WP3 UNI !ID !(9fc OR 9bs OR ELT) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP3 UNI !ID !(9fc OR 9bs OR ELT) FILTLVL>3]:
 //WP4 - Daggers
-ItemDisplay[WP4 UNI !ID !ELT (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
-ItemDisplay[UNI !ID 7di (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP4 UNI !ID !ELT FILTLVL>3]:
+ItemDisplay[UNI !ID 7di FILTLVL>3]:
 //WP5 - Throwing Weapons
-ItemDisplay[UNI !ID (9tk OR 9ta) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (9tk OR 9ta) FILTLVL>3]:
 //WP6 - Javelins
-//ItemDisplay[UNI !ID (7s7 OR 7gl OR 7ts) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+//ItemDisplay[UNI !ID (7s7 OR 7gl OR 7ts) FILTLVL>3]:
 //WP7 - Spears
-ItemDisplay[UNI !ID (spr OR tri OR brn OR spt OR pik OR 9sr OR 9tr OR 9br OR 9st OR 9p9) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (spr OR tri OR brn OR spt OR pik OR 9sr OR 9tr OR 9br OR 9st OR 9p9) FILTLVL>3]:
 //WP8 - Polearms
-ItemDisplay[UNI !ID (bar OR vou OR scy OR pax OR hal OR wsc OR 9b7 OR 9vo OR 9s8 OR 9pa OR 9h9) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (bar OR vou OR scy OR pax OR hal OR wsc OR 9b7 OR 9vo OR 9s8 OR 9pa OR 9h9) FILTLVL>3]:
 //WP9 - Bows
-ItemDisplay[WP9 !CL7 UNI !ID !ELT (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP9 !CL7 UNI !ID !ELT FILTLVL>3]:
 //WP10 - Crossbows
-ItemDisplay[WP10 UNI !ID !(8mx OR 8hx OR 8rx OR ELT) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP10 UNI !ID !(8mx OR 8hx OR 8rx OR ELT) FILTLVL>3]:
 //WP11 - Staves
-ItemDisplay[UNI !ID (sst OR lst OR cst OR bst OR wst OR 8ss OR 8bs OR 8ls) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (sst OR lst OR cst OR bst OR wst OR 8ss OR 8bs OR 8ls) FILTLVL>3]:
 //WP12 - Wands
-ItemDisplay[WP12 UNI !ID !(ELT OR 9bw) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP12 UNI !ID !(ELT OR 9bw) FILTLVL>3]:
 //WP13 - Scepters
-ItemDisplay[WP13 UNI !ID !(9ws OR ELT) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[WP13 UNI !ID !(9ws OR ELT) FILTLVL>3]:
 //CL5 - ASSASSIN ITEMS
-ItemDisplay[UNI !ID (9ar OR 7wb OR 7tw) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (9ar OR 7wb OR 7tw) FILTLVL>3]:
 //CL6 - SORC ITEMS
-// ItemDisplay[UNI !ID ob6 (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+// ItemDisplay[UNI !ID ob6 FILTLVL>3]:
 //CL7 - AMAZON ITEMS
-ItemDisplay[UNI !ID (am5 OR ame OR am9 OR am7 OR amb OR amc) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[UNI !ID (am5 OR ame OR am9 OR am7 OR amb OR amc) FILTLVL>3]:
 
 //show rest
 ItemDisplay[WEAPON UNI !ID]: %BORDER-62%%NAME%%MAP-0E%
@@ -1555,73 +1555,73 @@ ItemDisplay[SET !ID (rin OR amu)]: %BORDER-62%%NAME%%MAP-84%
 //¦ Set Items ¦
 //+-----------+
 //Aldur's Watchtower (Druid)
-ItemDisplay[SET !ID (9mt OR uul) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (9mt OR uul) FILTLVL>3]:
 //Angelic Raiment
-ItemDisplay[SET !ID (rng OR sbr) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (rng OR sbr) FILTLVL>3]:
 //Arcanna's Tricks
-ItemDisplay[SET !ID (skp OR ltp OR wst) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (skp OR ltp OR wst) FILTLVL>3]:
 //Arctic Gear
-ItemDisplay[SET !ID (vbl OR qui OR swb) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (vbl OR qui OR swb) FILTLVL>3]:
 //Berserker's Arsenal
-ItemDisplay[SET !ID (hlm OR spl OR 2ax) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]: 
+ItemDisplay[SET !ID (hlm OR spl OR 2ax) FILTLVL>3]: 
 //Bul-Kathos' Children
-ItemDisplay[SET !ID (7gd OR 7fb) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (7gd OR 7fb) FILTLVL>3]:
 //Cathan's Traps
-ItemDisplay[SET !ID (msk OR chn OR bst) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (msk OR chn OR bst) FILTLVL>3]:
 //Civerb's Vestments
-ItemDisplay[SET !ID (gsc OR lrg) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (gsc OR lrg) FILTLVL>3]:
 //Cleglaw's Brace
-ItemDisplay[SET !ID (lsd OR sml OR mgl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (lsd OR sml OR mgl) FILTLVL>3]:
 //Cow King's Leathers
-ItemDisplay[SET !ID (xap OR stu OR vbt) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (xap OR stu OR vbt) FILTLVL>3]:
 //Death's Disguise
-ItemDisplay[SET !ID (wsd OR lbl OR lgl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (wsd OR lbl OR lgl) FILTLVL>3]:
 //Griswold's Legacy
-ItemDisplay[SET !ID (xar OR 7ws OR urn OR paf) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (xar OR 7ws OR urn OR paf) FILTLVL>3]:
 //Heaven's Brethren
-ItemDisplay[SET !ID (xrs OR 7ma) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (xrs OR 7ma) FILTLVL>3]:
 //Hsaru's Defense
-ItemDisplay[SET !ID (buc OR mbt) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (buc OR mbt) FILTLVL>3]:
 //Hwanin's Majesty
-ItemDisplay[SET !ID (9vo OR xcl OR xrn OR mbl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (9vo OR xcl OR xrn OR mbl) FILTLVL>3]:
 //Immortal King
-ItemDisplay[SET !ID (ba5 OR 7m7 OR zhb OR xhg OR xhb OR uar) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (ba5 OR 7m7 OR zhb OR xhg OR xhb OR uar) FILTLVL>3]:
 //Infernal Tools
-ItemDisplay[SET !ID (dgr OR gwn OR cap) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (dgr OR gwn OR cap) FILTLVL>3]:
 //Iratha's Finery
-ItemDisplay[SET !ID (crn OR tbl OR tgl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (crn OR tbl OR tgl) FILTLVL>3]:
 //Isenhart's Armory
-ItemDisplay[SET !ID (bsd OR brs OR fhl OR gts) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (bsd OR brs OR fhl OR gts) FILTLVL>3]:
 //M'avina's Battle Hymn (Amazon)
-ItemDisplay[SET !ID (ci3 OR amc OR uld OR xtg OR zvb) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (ci3 OR amc OR uld OR xtg OR zvb) FILTLVL>3]:
 //Milabrega's Regalia
-ItemDisplay[SET !ID (wsp OR kit OR aar) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (wsp OR kit OR aar) FILTLVL>3]:
 //Naj's Ancient Vestige
-ItemDisplay[SET !ID (ci0 OR 6cs OR ult) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (ci0 OR 6cs OR ult) FILTLVL>3]:
 //Natalya's Odium (Assassin)
-ItemDisplay[SET !ID (xh9 OR ucl OR xmb) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (xh9 OR ucl OR xmb) FILTLVL>3]:
 //Orphan's Call
-ItemDisplay[SET !ID (xml OR xvg OR ztb) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (xml OR xvg OR ztb) FILTLVL>3]:
 //Sander's Folly
-ItemDisplay[SET !ID (bwn OR vgl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (bwn OR vgl) FILTLVL>3]:
 //Sazabi's Grand Tribute
-ItemDisplay[SET !ID (xhl OR 7ls OR upl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (xhl OR 7ls OR upl) FILTLVL>3]:
 //Sigon's Complete Steel
-ItemDisplay[SET !ID (ghm OR gth OR hbt OR tow OR hbl OR hgl) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (ghm OR gth OR hbt OR tow OR hbl OR hgl) FILTLVL>3]:
 //Tal Rasha's Wrappings (Sorceress)
-ItemDisplay[SET !ID (oba OR xsk OR uth OR zmb) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (oba OR xsk OR uth OR zmb) FILTLVL>3]:
 //Tancred's Battlegear
-ItemDisplay[SET !ID (bhm OR ful OR mpi) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (bhm OR ful OR mpi) FILTLVL>3]:
 //The Disciple
-ItemDisplay[SET !ID (uui OR xlb OR umc) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (uui OR xlb OR umc) FILTLVL>3]:
 //Trang-Oul's Avatar (Necro)
-ItemDisplay[SET !ID (uh9 OR xul OR ne9 OR utc) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (uh9 OR xul OR ne9 OR utc) FILTLVL>3]:
 //Vidala's Rig
-ItemDisplay[SET !ID (lea OR tbt OR lbb) (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]:
+ItemDisplay[SET !ID (lea OR tbt OR lbb) FILTLVL>3]:
 
 //Catch-All for Sets and Uniques
-ItemDisplay[SET rin ED<20 (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]: //Hide bad set rings
-ItemDisplay[SET amu !CLSK1=2 (FILTLVL=4 OR FILTLVL=5 OR FILTLVL=6 OR FILTLVL=7)]: //Hide bad set amulets
+ItemDisplay[SET rin ED<20 FILTLVL>3]: //Hide bad set rings
+ItemDisplay[SET amu !CLSK1=2 FILTLVL>3]: //Hide bad set amulets
 
 ItemDisplay[UNI !ID !(cm1 OR cm2 OR cm3)]: %BORDER-0E%%NAME%%MAP-0E%
 ItemDisplay[SET !ID]: %BORDER-84%%NAME%%MAP-84%
