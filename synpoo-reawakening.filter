@@ -24,11 +24,11 @@
 //-----------------------------------------------------------------------------------
 ItemDisplayFilterName[]: ÿc4Base //Filter Level 1
 ItemDisplayFilterName[]: ÿc3[ Light ] ÿc0- ÿc1No ÿc0TP/ID Scrolls //Filter Level 2
-ItemDisplayFilterName[]: ÿc<[ Medium ] ÿc0- ÿc1No ÿc0Life/Mana Pots //Filter Level 3
-ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0Flawless/Low Runes/Low Uni/Sets/Magic w/o +3 //Filter Level 4
+ItemDisplayFilterName[]: ÿc<[ Medium ] ÿc0- ÿc1No ÿc0Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0Flawless/Low Runes/Low Uni/Sets//Filter Level 4
 ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Gems //Filter Level 5
-ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewel //Filter Level 6
-ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Rare Items //Filter Level 7
+ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Trash Magic Jewels //Filter Level 6
+ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewels //Filter Level 7
 ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Non-Superior Bases/Plain Magic Circlets //Filter Level 8
 ItemDisplayFilterName[]: ÿc![ Very-Strict+ ] ÿc0- ÿc1No ÿc0+3 Magic Items //Filter Level 9
 ItemDisplayFilterName[]: ÿc1[ Ultra-Strict ] ÿc0- ÿc1No ÿc0Magic Large Charms //Filter Level 10
@@ -859,8 +859,8 @@ ItemDisplay[RW ETH]: %RED%Eth %NAME% %RED%[%WHITE%%SOCKETS%%RED%]
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                   ????? [Optional] Rules for Ignoring Specific Items ?????                    ?
 //?????????????????????????????????????????????????????????????????????????????????????????????????
-ItemDisplay[RARE !ID !(EQ7 OR amu OR rin OR jew) FILTLVL>5]: //Ignore all unidentified rares except circs/jewelry/jewels at Strict
-ItemDisplay[RARE !ID FILTLVL>6]: //Ignore all unidentified rares Strict+
+ItemDisplay[RARE !ID !(EQ7 OR amu OR rin OR jew) FILTLVL>6]: //Ignore all unidentified rares except circs/jewelry/jewels at Strict+
+// ItemDisplay[RARE !ID FILTLVL>6]: //Ignore all unidentified rares Strict+
 
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) (amu OR ci0 OR ci1 OR ci2 OR ci3) MAG ID FILTLVL>8]: //Ignore +3 magics at Very-Strict+
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) cm2 ID MAG FILTLVL>9]: //Ignore magic LCs at Ultra-Strict
@@ -881,7 +881,7 @@ ItemDisplay[MAG ID !ETH (ci0 OR ci1 OR ci2 OR ci3)]: %DOT-9B%%NAME%%CONTINUE% //
 //-----------------------------------------------------------------------------------
 // JEWELS - ITEM TAGS (Extends on some of the Shopping and tags)
 //-----------------------------------------------------------------------------------
-ItemDisplay[jew !UNI ID]: %CONTINUE%//Hide jewels that do not match any of the below stats
+ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) jew MAG ID FILTLVL>5]: %CONTINUE%//Ignore jewels that do not match any of the below stats at Strict
 
 // Add re-roll tag for all rare jewels that do not hit a stat below
 ItemDisplay[jew ID RARE ILVL>67 STAT486=0]: %NAME%{%TAN%Re-Roll%WHITE%: This %YELLOW%Jewel %TAN%+ %LIGHT_GRAY%6 Perfect Skulls%CL%}%CONTINUE%
@@ -1292,14 +1292,14 @@ ItemDisplay[NMAG (ci0 OR ci1 OR ci2 OR ci3) CLVL>90]: //Hide nonmagical circlets
 
 ItemDisplay[(MAG OR RARE) CL2 !ID ETH CLVL>60]: //Hide unid magic or rare eth barb helms after 60
 ItemDisplay[ETH NMAG CL2 CLVL>30]: //Hide non-magic eth barb helms after 30
-ItemDisplay[NMAG CL2 FILTLVL>3]: //Hide non-magic barb helms on higher filter levels
+ItemDisplay[NMAG CL2 FILTLVL>2]: //Hide non-magic barb helms on higher filter levels
 ItemDisplay[MAG !ID CL2 CLVL>93]: //Hide Magic Barb helms after 93
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 // Druid Pelts - 
 ItemDisplay[(MAG OR RARE) CL1 !ID ETH CLVL>60]: //Hide unid magic or rare eth druid pelts after 60
 ItemDisplay[MAG !ID CL1 CLVL>85]: //Hide magical Druid helms after 85
 ItemDisplay[ETH NMAG CL1 CLVL>30]: //Hide non-magic eth druid pelts after 30
-ItemDisplay[NMAG CL1 FILTLVL>3]: //Hide non-magic druid helms on higher filter levels
+ItemDisplay[NMAG CL1 FILTLVL>2]: //Hide non-magic druid helms on higher filter levels
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 // Necromancer Shrunken Heads -
 //ItemDisplay[(NMAG OR ((MAG OR RARE) AND !ID)) CL4 CLVL>85]:
@@ -1375,9 +1375,9 @@ ItemDisplay[CLVL<80 NMAG SOCK=0 !ETH !INF !SUP (9h9 OR 9wc OR 9br OR 8rx) ILVL>4
 //?                                ????? Magic Exclusions ?????                                   ?
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //HIDE MAGIC ARMOR/WEP EXCEPT: CIRC/CLAWS/ORBS/NEC HELM/ZON WEP/GLOVE/WANDS ABOVE 3
-ItemDisplay[MAG (ARMOR OR WEAPON) !(EQ7 OR CL5 OR CL4 OR CL6 OR CL7 OR EQ4 OR WP12) FILTLVL>3]:
+ItemDisplay[MAG (ARMOR OR WEAPON) !(EQ7 OR CL5 OR CL4 OR CL6 OR CL7 OR EQ4 OR WP12) FILTLVL>2]:
 //Hide MAGIC Gloves without +3 to any tab
-ItemDisplay[MAG ID FILTLVL>3 EQ4 !(TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3)]:
+ItemDisplay[MAG ID FILTLVL>2 EQ4 !(TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3)]:
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                                ????? NMAG Exclusions ?????                                    ?
@@ -1445,17 +1445,17 @@ ItemDisplay[(NMAG OR (MAG AND !ID AND !ETH)) (tsp OR 9ts OR 7ts) CLVL>59]: //Ign
 // Hide NMAG items that do not have any +3 skill
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //Hide NMAG/MAG Druid Pelts and Clubs without +3
-ItemDisplay[(NMAG OR MAG) ID (CL1 OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL>3 !(SK221=3 OR SK222=3 OR SK223=3 OR SK224=3 OR SK225=3 OR SK226=3 OR SK227=3 OR SK228=3 OR SK229=3 OR SK230=3 OR SK231=3 OR SK232=3 OR SK233=3 OR SK234=3 OR SK235=3 OR SK236=3 OR SK237=3 OR SK238=3 OR SK239=3 OR SK240=3 OR SK241=3 OR SK242=3 OR SK243=3 OR SK244=3 OR SK245=3 OR SK246=3 OR SK247=3 OR SK248=3 OR SK249=3 OR SK250=3)]: 
+ItemDisplay[(NMAG OR MAG) ID (CL1 OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL>2 !(SK221=3 OR SK222=3 OR SK223=3 OR SK224=3 OR SK225=3 OR SK226=3 OR SK227=3 OR SK228=3 OR SK229=3 OR SK230=3 OR SK231=3 OR SK232=3 OR SK233=3 OR SK234=3 OR SK235=3 OR SK236=3 OR SK237=3 OR SK238=3 OR SK239=3 OR SK240=3 OR SK241=3 OR SK242=3 OR SK243=3 OR SK244=3 OR SK245=3 OR SK246=3 OR SK247=3 OR SK248=3 OR SK249=3 OR SK250=3)]: 
 //Hide NMAG/MAG Barb Helms without +3
-ItemDisplay[(NMAG OR MAG) ID CL2 FILTLVL>3 !(SK126=3 OR SK127=3 OR SK128=3 OR SK129=3 OR SK130=3 OR SK131=3 OR SK132=3 OR SK133=3 OR SK134=3 OR SK135=3 OR SK136=3 OR SK137=3 OR SK138=3 OR SK139=3 OR SK140=3 OR SK141=3 OR SK142=3 OR SK143=3 OR SK144=3 OR SK145=3 OR SK146=3 OR SK147=3 OR SK148=3 OR SK149=3 OR SK150=3 OR SK151=3 OR SK152=3 OR SK153=3 OR SK154=3 OR SK155=3 OR SK368=3)]: 
+ItemDisplay[(NMAG OR MAG) ID CL2 FILTLVL>2 !(SK126=3 OR SK127=3 OR SK128=3 OR SK129=3 OR SK130=3 OR SK131=3 OR SK132=3 OR SK133=3 OR SK134=3 OR SK135=3 OR SK136=3 OR SK137=3 OR SK138=3 OR SK139=3 OR SK140=3 OR SK141=3 OR SK142=3 OR SK143=3 OR SK144=3 OR SK145=3 OR SK146=3 OR SK147=3 OR SK148=3 OR SK149=3 OR SK150=3 OR SK151=3 OR SK152=3 OR SK153=3 OR SK154=3 OR SK155=3 OR SK368=3)]: 
 //Hide NMAG/MAG Nec Shields and Wands without +3
-ItemDisplay[(NMAG OR MAG) ID (CL4 OR WP12) FILTLVL>3 !(SK66=3 OR SK67=3 OR SK68=3 OR SK69=3 OR SK70=3 OR SK71=3 OR SK72=3 OR SK73=3 OR SK74=3 OR SK75=3 OR SK76=3 OR SK77=3 OR SK78=3 OR SK79=3 OR SK80=3 OR SK81=3 OR SK82=3 OR SK83=3 OR SK84=3 OR SK85=3 OR SK86=3 OR SK87=3 OR SK88=3 OR SK89=3 OR SK90=3 OR SK91=3 OR SK92=3 OR SK93=3 OR SK94=3 OR SK95=3 OR SK367=3 OR SK374=3 OR SK381=3)]: 
+ItemDisplay[(NMAG OR MAG) ID (CL4 OR WP12) FILTLVL>2 !(SK66=3 OR SK67=3 OR SK68=3 OR SK69=3 OR SK70=3 OR SK71=3 OR SK72=3 OR SK73=3 OR SK74=3 OR SK75=3 OR SK76=3 OR SK77=3 OR SK78=3 OR SK79=3 OR SK80=3 OR SK81=3 OR SK82=3 OR SK83=3 OR SK84=3 OR SK85=3 OR SK86=3 OR SK87=3 OR SK88=3 OR SK89=3 OR SK90=3 OR SK91=3 OR SK92=3 OR SK93=3 OR SK94=3 OR SK95=3 OR SK367=3 OR SK374=3 OR SK381=3)]: 
 //Hide NMAG/MAG Sin Claws without +3
-ItemDisplay[(NMAG OR MAG) ID CL5 FILTLVL>3 !(SK251=3 OR SK252=3 OR SK253=3 OR SK254=3 OR SK255=3 OR SK256=3 OR SK257=3 OR SK258=3 OR SK259=3 OR SK260=3 OR SK261=3 OR SK262=3 OR SK263=3 OR SK264=3 OR SK265=3 OR SK266=3 OR SK267=3 OR SK268=3 OR SK269=3 OR SK270=3 OR SK271=3 OR SK272=3 OR SK273=3 OR SK274=3 OR SK275=3 OR SK276=3 OR SK277=3 OR SK278=3 OR SK279=3 OR SK280=3 OR SK366=3)]: 
+ItemDisplay[(NMAG OR MAG) ID CL5 FILTLVL>2 !(SK251=3 OR SK252=3 OR SK253=3 OR SK254=3 OR SK255=3 OR SK256=3 OR SK257=3 OR SK258=3 OR SK259=3 OR SK260=3 OR SK261=3 OR SK262=3 OR SK263=3 OR SK264=3 OR SK265=3 OR SK266=3 OR SK267=3 OR SK268=3 OR SK269=3 OR SK270=3 OR SK271=3 OR SK272=3 OR SK273=3 OR SK274=3 OR SK275=3 OR SK276=3 OR SK277=3 OR SK278=3 OR SK279=3 OR SK280=3 OR SK366=3)]: 
 //Hide NMAG/MAG Sorc Orbs and Staves without +3
-ItemDisplay[(NMAG OR MAG) (CL6 OR WP11) FILTLVL>3 !(SK36=3 OR SK37=3 OR SK38=3 OR SK39=3 OR SK40=3 OR SK41=3 OR SK42=3 OR SK43=3 OR SK44=3 OR SK45=3 OR SK46=3 OR SK47=3 OR SK48=3 OR SK49=3 OR SK50=3 OR SK51=3 OR SK52=3 OR SK53=3 OR SK54=3 OR SK55=3 OR SK56=3 OR SK57=3 OR SK58=3 OR SK59=3 OR SK60=3 OR SK61=3 OR SK62=3 OR SK63=3 OR SK64=3 OR SK65=3 OR SK369=3 OR SK376=3 OR SK383=3)]: 
+ItemDisplay[(NMAG OR MAG) (CL6 OR WP11) FILTLVL>2 !(SK36=3 OR SK37=3 OR SK38=3 OR SK39=3 OR SK40=3 OR SK41=3 OR SK42=3 OR SK43=3 OR SK44=3 OR SK45=3 OR SK46=3 OR SK47=3 OR SK48=3 OR SK49=3 OR SK50=3 OR SK51=3 OR SK52=3 OR SK53=3 OR SK54=3 OR SK55=3 OR SK56=3 OR SK57=3 OR SK58=3 OR SK59=3 OR SK60=3 OR SK61=3 OR SK62=3 OR SK63=3 OR SK64=3 OR SK65=3 OR SK369=3 OR SK376=3 OR SK383=3)]: 
 //Hide NMAG/MAG Scepters without +3
-ItemDisplay[(NMAG OR MAG) ID WP13 FILTLVL>3 !(SK96=3 OR SK97=3 OR SK98=3 OR SK99=3 OR SK100=3 OR SK101=3 OR SK102=3 OR SK103=3 OR SK104=3 OR SK105=3 OR SK106=3 OR SK107=3 OR SK108=3 OR SK109=3 OR SK110=3 OR SK111=3 OR SK112=3 OR SK113=3 OR SK114=3 OR SK115=3 OR SK116=3 OR SK117=3 OR SK118=3 OR SK119=3 OR SK120=3 OR SK121=3 OR SK122=3 OR SK123=3 OR SK124=3 OR SK125=3 OR SK364=3 OR SK371=3 OR SK378=3)]: 
+ItemDisplay[(NMAG OR MAG) ID WP13 FILTLVL>2 !(SK96=3 OR SK97=3 OR SK98=3 OR SK99=3 OR SK100=3 OR SK101=3 OR SK102=3 OR SK103=3 OR SK104=3 OR SK105=3 OR SK106=3 OR SK107=3 OR SK108=3 OR SK109=3 OR SK110=3 OR SK111=3 OR SK112=3 OR SK113=3 OR SK114=3 OR SK115=3 OR SK116=3 OR SK117=3 OR SK118=3 OR SK119=3 OR SK120=3 OR SK121=3 OR SK122=3 OR SK123=3 OR SK124=3 OR SK125=3 OR SK364=3 OR SK371=3 OR SK378=3)]: 
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                           ????? General Equipment Processing ?????                            ?
@@ -1620,7 +1620,7 @@ ItemDisplay[SET !ID (uh9 OR xul OR ne9 OR utc) FILTLVL>3]:
 ItemDisplay[SET !ID (lea OR tbt OR lbb) FILTLVL>3]:
 
 //Catch-All for Sets and Uniques
-ItemDisplay[SET rin ED<20 FILTLVL>3]: //Hide bad set rings
+// ItemDisplay[SET rin ED<20 FILTLVL>3]: //Hide bad set rings
 ItemDisplay[SET amu !CLSK1=2 FILTLVL>3]: //Hide bad set amulets
 
 ItemDisplay[UNI !ID !(cm1 OR cm2 OR cm3)]: %BORDER-0E%%NAME%%MAP-0E%
@@ -1629,7 +1629,8 @@ ItemDisplay[SET !ID]: %BORDER-84%%NAME%%MAP-84%
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                                      ????? MAG Charms, Circ, Amu ?????                                       ?
 //?????????????????????????????????????????????????????????????????????????????????????????????????
-ItemDisplay[MAG ID (cm2 OR cm3 OR cms OR amu)]: %BORDER-0E%%NAME%%MAP-0E%%CONTINUE%
+// ItemDisplay[MAG ID (cm2 OR cm3 OR cms OR amu)]: %DOT-9B%%NAME%%MAP-0E%%CONTINUE%
+ItemDisplay[ID cm3 MAG (TABSK0>0 OR TABSK1>0 OR TABSK2>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %DOT-9B%%NAME%%MAP-0E%%CONTINUE%
 
 //All Charms
 ItemDisplay[cm2 MAG !ID]:  %NAME% 
@@ -1646,6 +1647,7 @@ ItemDisplay[cm2 UNI CLSK5>1]: %PX-68%%NAME% %GREEN%Dru
 ItemDisplay[cm2 UNI CLSK6>1]: %PX-68%%NAME% %GREEN%Sin
 
 ItemDisplay[(amu OR ci0 OR ci1 OR ci2 OR ci3) MAG ID]: %CONTINUE% // Hide amulets/circlets that aren't +3
+ItemDisplay[ID amu (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3)]: %DOT-9B%%NAME%%MAP-0E%%CONTINUE%
 //+3 Circlets
 ItemDisplay[ID (ci0 OR ci1 OR ci2 OR ci3) TABSK0=3]: %GREEN%+3 Zon Bow Circ %CONTINUE%
 ItemDisplay[ID (ci0 OR ci1 OR ci2 OR ci3) TABSK1=3]: %GREEN%+3 Zon Passive Circ %CONTINUE%
@@ -1679,6 +1681,7 @@ ItemDisplay[ID EQ7 ((TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR
 ItemDisplay[ID EQ7 ((TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3) AND FRW=30)]: %NAME%%PURPLE%FRW
 
 ItemDisplay[EQ7 MAG ID FILTLVL>7 (FCR<20 OR FRW<30) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: // Hide +3 circlets without FCR/FRW at Very-Strict
+ItemDisplay[ID EQ7 (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3)]: %DOT-9B%%NAME%%MAP-0E%%CONTINUE%
 
 //+3 Amulets
 ItemDisplay[ID amu TABSK0=3]: %BLUE%+3 Zon Bow %CONTINUE%
@@ -1895,8 +1898,8 @@ ItemDisplay[MAG !ETH EQ4 TABSK2>2 IAS>19]: %NAME% %GOLD%[%GREEN%+3 Javelin\Spear
 ItemDisplay[MAG !ETH amf TABSK2>5 IAS>39]: %NAME% %GOLD%[%GREEN%Keep%GOLD%]
 ItemDisplay[RARE !ETH CL7 WP5 (TABSK2>4 OR (TABSK2>2 AND CLSK0>1)) IAS>39]: %NAME% %GOLD%[%GREEN%Keep%GOLD%]
 
-//Hide trash identified Magic that didn't roll notable listed above, at SEMI-STRICT+
-ItemDisplay[MAG ID (CL5 OR CL4 OR CL6 OR CL7 OR EQ4 OR WP12) FILTLVL>3]:
+//Hide trash identified Magic that didn't roll notable listed above, at MEDIUM
+ItemDisplay[MAG ID (CL5 OR CL4 OR CL6 OR CL7 OR EQ4 OR WP12) FILTLVL>2]:
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                             ????? Identified Crafting Bases ?????                             ?
