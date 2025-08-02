@@ -24,16 +24,16 @@
 //-----------------------------------------------------------------------------------
 ItemDisplayFilterName[]: ÿc4Base //Filter Level 1
 ItemDisplayFilterName[]: ÿc3[ Light ] ÿc0- ÿc1No ÿc0TP/ID Scrolls //Filter Level 2
-ItemDisplayFilterName[]: ÿc<[ Medium ] ÿc0- ÿc1No ÿc0Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
-ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0Flawless/Low Runes/Low Uni/Sets//Filter Level 4
-ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Gems //Filter Level 5
-ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Trash Magic Jewels //Filter Level 6
-ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewels //Filter Level 7
-ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Non-Superior Bases/Plain Magic Circlets //Filter Level 8
-ItemDisplayFilterName[]: ÿc![ Very-Strict+ ] ÿc0- ÿc1No ÿc0+3 Magic Items //Filter Level 9
+ItemDisplayFilterName[]: ÿc<[ Medium ] ÿc0- ÿc1No ÿc0FGems/Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0PGems/Low Runes/Low Uni/Sets//Filter Level 4
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Trash Magic Jewels //Filter Level 5
+ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewels //Filter Level 6
+ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Plain +3 Magic Circlets //Filter Level 7
+ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Plain +3 Magic Amulets//Filter Level 8
+ItemDisplayFilterName[]: ÿc![ Very-Strict+ ] ÿc0- ÿc1No ÿc0Plain Skillers //Filter Level 9
 ItemDisplayFilterName[]: ÿc1[ Ultra-Strict ] ÿc0- ÿc1No ÿc0Magic Large Charms //Filter Level 10
 ItemDisplayFilterName[]: ÿc1[ Ultra-Strict+ ] ÿc0- ÿc1No ÿc0Magic Jewels //Filter Level 11
-ItemDisplayFilterName[]: ÿc;[ Omega-Strict ] ÿc0- ÿc1No ÿc0Magic Items //Filter Level 12
+ItemDisplayFilterName[]: ÿc;[ Omega-Strict ] ÿc0- ÿc1No ÿc0Non-Superior Bases/Magic Items //Filter Level 12
 
 //-----------------------------------------------------------------------------------
 // QUEST ITEMS
@@ -100,13 +100,13 @@ ItemDisplay[gsb]: %ORANGE%[%BLUE%Sapphire%ORANGE%]
 ItemDisplay[gsy]: %ORANGE%[%YELLOW%Topaz%ORANGE%]
 ItemDisplay[sku]: %ORANGE%[%GRAY%Skull%ORANGE%]
 
-ItemDisplay[(gzv OR gzvs) FILTLVL>3]: //Hide Flawless Gems on SEMI+
-ItemDisplay[(glw OR glws) FILTLVL>3]: 
-ItemDisplay[(glg OR glgs) FILTLVL>3]: 
-ItemDisplay[(glr OR glrs) FILTLVL>3]: 
-ItemDisplay[(glb OR glbs) FILTLVL>3]: 
-ItemDisplay[(gly OR glys) FILTLVL>3]: 
-ItemDisplay[(skl OR skls) FILTLVL>3]: 
+ItemDisplay[(gzv OR gzvs) FILTLVL>2]: //Hide Flawless Gems on Medium
+ItemDisplay[(glw OR glws) FILTLVL>2]: 
+ItemDisplay[(glg OR glgs) FILTLVL>2]: 
+ItemDisplay[(glr OR glrs) FILTLVL>2]: 
+ItemDisplay[(glb OR glbs) FILTLVL>2]: 
+ItemDisplay[(gly OR glys) FILTLVL>2]: 
+ItemDisplay[(skl OR skls) FILTLVL>2]: 
 
 ItemDisplay[gzvs QTY>1]: %ORANGE%[%PURPLE%F.Amethyst x%QTY%%ORANGE%] //Flawless Stacked Gems
 ItemDisplay[glws QTY>1]: %ORANGE%[%WHITE%F.Diamond x%QTY%%ORANGE%] //Flawless Diamond
@@ -132,13 +132,14 @@ ItemDisplay[gpbs QTY>1]: %BORDER-CB%%BLUE%Perfect Sapphire x%QTY%
 ItemDisplay[gpys QTY>1]: %BORDER-CB%%YELLOW%Perfect Topaz x%QTY%
 ItemDisplay[skzs QTY>1]: %BORDER-CB%%GRAY%Perfect Skull x%QTY%
 
-ItemDisplay[(gpvs OR gpv) FILTLVL>4]:
-ItemDisplay[(gpws OR gpw) FILTLVL>4]:
-ItemDisplay[(gpgs OR gpg) FILTLVL>4]:
-ItemDisplay[(gprs OR gpr) FILTLVL>4]:
-ItemDisplay[(gpbs OR gpb) FILTLVL>4]:
-ItemDisplay[(gpys OR gpy) FILTLVL>4]:
-ItemDisplay[(skzs OR skz) FILTLVL>4]:
+// Hide PGems on Semi-Strict
+ItemDisplay[(gpvs OR gpv) FILTLVL>3]:
+ItemDisplay[(gpws OR gpw) FILTLVL>3]:
+ItemDisplay[(gpgs OR gpg) FILTLVL>3]:
+ItemDisplay[(gprs OR gpr) FILTLVL>3]:
+ItemDisplay[(gpbs OR gpb) FILTLVL>3]:
+ItemDisplay[(gpys OR gpy) FILTLVL>3]:
+ItemDisplay[(skzs OR skz) FILTLVL>3]:
 
 ItemDisplay[gpvs OR gpv]: %BORDER-CB%%PURPLE%Perfect Amethyst //Perfect Gems
 ItemDisplay[gpws OR gpw]: %BORDER-CB%%WHITE%Perfect Diamond
@@ -859,10 +860,10 @@ ItemDisplay[RW ETH]: %RED%Eth %NAME% %RED%[%WHITE%%SOCKETS%%RED%]
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                   ????? [Optional] Rules for Ignoring Specific Items ?????                    ?
 //?????????????????????????????????????????????????????????????????????????????????????????????????
-ItemDisplay[RARE !ID !(EQ7 OR amu OR rin OR jew) FILTLVL>6]: //Ignore all unidentified rares except circs/jewelry/jewels at Strict+
+ItemDisplay[RARE !ID !(EQ7 OR amu OR rin OR jew) FILTLVL>5]: //Ignore all unidentified rares except circs/jewelry/jewels
 // ItemDisplay[RARE !ID FILTLVL>6]: //Ignore all unidentified rares Strict+
 
-ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) (amu OR ci0 OR ci1 OR ci2 OR ci3) MAG ID FILTLVL>8]: //Ignore +3 magics at Very-Strict+
+ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) amu !SUFFIX~1-2000 MAG ID FILTLVL>7]: //Ignore +3 magics at Very-Strict+
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) cm2 ID MAG FILTLVL>9]: //Ignore magic LCs at Ultra-Strict
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) jew ID MAG FILTLVL>10]: //Ignore magic jewels at Ultra-Strict+
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) ID MAG FILTLVL>11]: //Ignore all magic items at Omega-Strict
@@ -881,7 +882,7 @@ ItemDisplay[MAG ID !ETH (ci0 OR ci1 OR ci2 OR ci3)]: %DOT-9B%%NAME%%CONTINUE% //
 //-----------------------------------------------------------------------------------
 // JEWELS - ITEM TAGS (Extends on some of the Shopping and tags)
 //-----------------------------------------------------------------------------------
-ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) jew MAG ID FILTLVL>5]: %CONTINUE%//Ignore jewels that do not match any of the below stats at Strict
+ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) jew MAG ID FILTLVL>4]: %CONTINUE%//Ignore jewels that do not match any of the below stats
 
 // Add re-roll tag for all rare jewels that do not hit a stat below
 ItemDisplay[jew ID RARE ILVL>67 STAT486=0]: %NAME%{%TAN%Re-Roll%WHITE%: This %YELLOW%Jewel %TAN%+ %LIGHT_GRAY%6 Perfect Skulls%CL%}%CONTINUE%
@@ -1382,11 +1383,11 @@ ItemDisplay[MAG ID FILTLVL>2 EQ4 !(TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK32=3
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                                ????? NMAG Exclusions ?????                                    ?
 //?????????????????????????????????????????????????????????????????????????????????????????????????
-ItemDisplay[NMAG WEAPON !SUP FILTLVL>7]: //HIDE NON SUPERIOR NON MAGIC WEAPONS ITEMS ON VERY- STRICT
-ItemDisplay[NMAG WEAPON SOCK=0 FILTLVL>7]: //HIDE 0 SOCKET NON MAGIC WEAPONS ITEMS ON VERY-STRICT
+ItemDisplay[NMAG WEAPON !SUP FILTLVL>11]: //HIDE NON SUPERIOR NON MAGIC WEAPONS ITEMS ON VERY- STRICT
+ItemDisplay[NMAG WEAPON SOCK=0 FILTLVL>11]: //HIDE 0 SOCKET NON MAGIC WEAPONS ITEMS ON VERY-STRICT
 
-ItemDisplay[NMAG ARMOR !SUP FILTLVL>7]: //HIDE NON SUPERIOR NON MAGIC ARMOR ITEMS ON VERY-STRICT
-ItemDisplay[NMAG ARMOR SOCK=0 FILTLVL>7]: //HIDE 0 SOCKET NON MAGIC ARMOR ITEMS ON VERY-STRICT
+ItemDisplay[NMAG ARMOR !SUP FILTLVL>11]: //HIDE NON SUPERIOR NON MAGIC ARMOR ITEMS ON VERY-STRICT
+ItemDisplay[NMAG ARMOR SOCK=0 FILTLVL>11]: //HIDE 0 SOCKET NON MAGIC ARMOR ITEMS ON VERY-STRICT
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                           ????? Immediately Ignored Equipment ?????                           ?
@@ -1514,6 +1515,7 @@ ItemDisplay[WP2 UNI !ID !(9gm OR 9fl OR ELT) FILTLVL>3]:
 ItemDisplay[WP2 UNI !ID (7cl OR 7sp OR 7mt) FILTLVL>3]:
 //WP3 - Swords
 ItemDisplay[WP3 UNI !ID !(9fc OR 9bs OR ELT) FILTLVL>3]:
+ItemDisplay[WP3 UNI !ID flc FILTLVL>3]:
 //WP4 - Daggers
 ItemDisplay[WP4 UNI !ID !ELT FILTLVL>3]:
 ItemDisplay[UNI !ID 7di FILTLVL>3]:
@@ -1680,7 +1682,7 @@ ItemDisplay[ID (ci0 OR ci1 OR ci2 OR ci3) TABSK50=3]: %GREEN%+3 Sin Martial Arts
 ItemDisplay[ID EQ7 ((TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3) AND FCR=20)]: %NAME%%PURPLE%FCR
 ItemDisplay[ID EQ7 ((TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3) AND FRW=30)]: %NAME%%PURPLE%FRW
 
-ItemDisplay[EQ7 MAG ID FILTLVL>7 (FCR<20 OR FRW<30) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: // Hide +3 circlets without FCR/FRW at Very-Strict
+ItemDisplay[EQ7 MAG ID FILTLVL>6 (FCR<20 OR FRW<30) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: // Hide +3 circlets without FCR/FRW at Very-Strict
 ItemDisplay[ID EQ7 (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK8=3 OR TABSK9=3 OR TABSK10=3 OR TABSK16=3 OR TABSK17=3 OR TABSK18=3 OR TABSK24=3 OR TABSK25=3 OR TABSK26=3 OR TABSK32=3 OR TABSK33=3 OR TABSK34=3 OR TABSK40=3 OR TABSK41=3 OR TABSK42=3 OR TABSK48=3 OR TABSK49=3 OR TABSK50=3)]: %DOT-9B%%NAME%%MAP-0E%%CONTINUE%
 
 //+3 Amulets
@@ -1730,6 +1732,9 @@ ItemDisplay[cm3 MAXDMG>8]: %TAN%%MAXDMG% Max Dmg %GRAY%GC
 // ItemDisplay[cm3 RES>9]: %PURPLE%ALL %WHITE%Res %GRAY%Grand Charm
 // ItemDisplay[cm3 LIFE>34]: %NAME% %RED%Life%CONTINUE%
 // ItemDisplay[cm3 MANA>49]: %NAME% %BLUE%Mana%CONTINUE%
+
+//Hide plain skillers
+ItemDisplay[ID cm3 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) ((TABSK0>0 OR TABSK1>0 OR TABSK2>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0) AND !(LIFE>0 OR FHR>0 OR FRW>0 OR STR>0 OR DEX>0 OR GFIND>0)) FILTLVL>8]: 
 
 // Display class name for charms with skill bonuses for that class.
 ItemDisplay[ID cm3 TABSK0>0]: %GREEN%Zon Bow %CONTINUE%
