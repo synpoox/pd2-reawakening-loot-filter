@@ -149,8 +149,6 @@ ItemDisplay[gpbs OR gpb]: %BORDER-CB%%BLUE%Perfect Sapphire
 ItemDisplay[gpys OR gpy]: %BORDER-CB%%YELLOW%Perfect Topaz
 ItemDisplay[skzs OR skz]: %BORDER-CB%%GRAY%Perfect Skull
 
-ItemDisplay[(MAG OR RARE) (am1 OR am6 OR amb OR am2 OR am7 OR amc) !ID]: %NAME%
-
 //?                           ????? Rules for Ignoring Misc Items ?????                           ?
 ItemDisplay[yps CLVL>70]: //Ignore all Antidote Potions
 ItemDisplay[wms CLVL>41]: //Ignore all Thawing Potions
@@ -258,13 +256,9 @@ ItemDisplay[ear]: //Hide Ears
 ItemDisplay[std]: %NAME% x%QTY% //Standard of Heroes
 
 //PD2 Single Player Reawakening
-ItemDisplay[(uul OR 6ws OR ulc OR 9bw OR bwn OR 8s8 OR xth OR 8rx) RARE !ID]: %BORDER-0A%%DOT-62%%NAME%
-// ItemDisplay[ELT RARE !ID !ci3]: %NAME%
-// ItemDisplay[(aqv OR cqv) (RARE OR UNI) !ID]: %BORDER-0A%%DOT-62%%NAME%
 ItemDisplay[CARD]: %BORDER-77%%NAME%
 ItemDisplay[awst OR exo OR dvo OR rgo OR cho OR tjo OR dvia]: %BORDER-0A%%DOT-62%%NAME%
 ItemDisplay[rotf OR rotv OR rofp OR oou OR teo OR heo OR deo OR mfo]: %BORDER-68%%NAME%
-
 
 //PD2 Items
 ItemDisplay[fort]: %GOLD%%NAME%{%WHITE%Map + %GOLD%Orb %WHITE%For Melee Chars}%MAP% //Orb of Fortification
