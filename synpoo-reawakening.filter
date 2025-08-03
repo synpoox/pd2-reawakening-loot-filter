@@ -258,7 +258,8 @@ ItemDisplay[std]: %NAME% x%QTY% //Standard of Heroes
 //PD2 Single Player Reawakening
 ItemDisplay[CARD]: %BORDER-77%%NAME%
 ItemDisplay[awst OR exo OR dvo OR rgo OR cho OR tjo OR dvia]: %BORDER-0A%%DOT-62%%NAME%
-ItemDisplay[rotf OR rotv OR rofp OR oou OR teo OR heo OR deo OR mfo]: %BORDER-68%%NAME%
+ItemDisplay[rotf OR rotv OR rofp OR oou OR mfo]: %BORDER-0A%%DOT-68%%NAME%
+ItemDisplay[teo OR heo OR deo]: %BORDER-0A%%DOT-9B%%NAME%
 
 //PD2 Items
 ItemDisplay[fort]: %GOLD%%NAME%{%WHITE%Map + %GOLD%Orb %WHITE%For Melee Chars}%MAP% //Orb of Fortification
@@ -855,19 +856,18 @@ ItemDisplay[RW ED=15]: %GRAY%[%BLUE%15%%GRAY%] %NAME%%CONTINUE%
 ItemDisplay[RW !ETH]: %WHITE%%NAME% %RED%[%WHITE%%SOCKETS%%RED%]
 ItemDisplay[RW ETH]: %RED%Eth %NAME% %RED%[%WHITE%%SOCKETS%%RED%]
 //?????????????????????????????????????????????????????????????????????????????????????????????????
-//?                   ????? [Optional] Rules for Ignoring Specific Items ?????                    ?
+//?                                Specific FILTLVL Control                                       ?
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 ItemDisplay[RARE !ID !(EQ7 OR amu OR rin OR jew) FILTLVL>5]: //Ignore all unidentified rares except circs/jewelry/jewels
 // ItemDisplay[RARE !ID FILTLVL>6]: //Ignore all unidentified rares Strict+
-
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) amu !SUFFIX~1-2000 MAG ID FILTLVL>7]: //Ignore +3 magics at Very-Strict+
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) cm2 ID MAG FILTLVL>9]: //Ignore magic LCs at Ultra-Strict
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) jew ID MAG FILTLVL>10]: //Ignore magic jewels at Ultra-Strict+
 ItemDisplay[!(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) ID MAG FILTLVL>11]: //Ignore all magic items at Omega-Strict
 
-ItemDisplay[MAG rin CLVL>79]: //Ignore all magic rings lvl80+
+ItemDisplay[MAG rin CLVL>29]: //Ignore all magic rings lvl30+
 ItemDisplay[MAG !ID cm2 FILTLVL>5]: //Ignore unidentified magic large charms.
-ItemDisplay[MAG !ID rin CLVL>79]: //Ignore unidentified magic rings at level 80+.
+ItemDisplay[MAG !ID rin CLVL>29]: //Ignore unidentified magic rings at level 30+
 //ItemDisplay[MAG !ID jew ILVL<66]: //Ignore unidentified magic jewels unless they have an item level high enough for ED +40%.
 
 //ItemDisplay[MAG !ID cm2]: %BLUE%%NAME% %WHITE%[%GRAY%Lv.%ILVL%%WHITE%] //Magical Unid SC/GC
@@ -1511,7 +1511,7 @@ ItemDisplay[UNI !ID (7mp OR 72a OR 7ha OR 7gi) FILTLVL>3]:
 ItemDisplay[WP2 UNI !ID !(9gm OR 9fl OR ELT) FILTLVL>3]:
 ItemDisplay[WP2 UNI !ID (7cl OR 7sp OR 7mt) FILTLVL>3]:
 //WP3 - Swords
-ItemDisplay[WP3 UNI !ID !(9fc OR 9bs OR ELT) FILTLVL>3]:
+ItemDisplay[WP3 UNI !ID !ELT FILTLVL>3]:
 ItemDisplay[WP3 UNI !ID (flc OR 7sb) FILTLVL>3]:
 //WP4 - Daggers
 ItemDisplay[WP4 UNI !ID !ELT FILTLVL>3]:
@@ -1626,7 +1626,7 @@ ItemDisplay[UNI !ID !(cm1 OR cm2 OR cm3)]: %BORDER-0E%%NAME%%MAP-0E%
 ItemDisplay[SET !ID]: %BORDER-84%%NAME%%MAP-84%
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????
-//?                                      ????? MAG Charms, Circ, Amu ?????                                       ?
+//?                                     MAG Charms, Circ, Amu                                     ?
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 // ItemDisplay[MAG ID (cm1 OR cm2 OR cm3 OR cms OR amu)]: %PX-9B%%NAME%%MAP-97%%CONTINUE%
 ItemDisplay[ID cm3 MAG (TABSK0>0 OR TABSK1>0 OR TABSK2>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %DOT-9B%%NAME%%MAP-0E%%CONTINUE%
@@ -1786,15 +1786,15 @@ ItemDisplay[cm2 MAXDMG>4]: %TAN%%MAXDMG% Max Dmg %GRAY%LC
 // ItemDisplay[cm2 !UNI (RES>4 AND FHR>0)]: %PURPLE%ALL Res %ORANGE%FHR %GRAY%Large Charm
 // ItemDisplay[cm2 !UNI ((RES>4 AND LIFE>0) OR (RES>0 AND LIFE>29))]: %PURPLE%ALL %WHITE%Res %RED%Life %GRAY%Large Charm
 // ItemDisplay[cm2 !UNI RES>6]: %PURPLE%ALL %WHITE%Res %GRAY%Large Charm
-ItemDisplay[cm2 STAT329>2]: %NAME% %STAT329%% %RED%Fire Dmg LC%CONTINUE%
-ItemDisplay[cm2 STAT330>2]: %NAME% %STAT330%% %YELLOW%Lite Dmg LC%CONTINUE%
-ItemDisplay[cm2 STAT331>2]: %NAME% %STAT331%% %BLUE%Cold Dmg LC%CONTINUE%
-ItemDisplay[cm2 STAT332>2]: %NAME% %STAT332%% %GREEN%Psn Dmg LC%CONTINUE%
-ItemDisplay[cm2 STAT357>2]: %NAME% %STAT357%% %CORAL%Magic Dmg LC%CONTINUE%
-ItemDisplay[cm2 STAT333>1]: %NAME% %STAT333%% %RED%Fire Pierce LC%CONTINUE%
-ItemDisplay[cm2 STAT334>1]: %NAME% %STAT334%% %YELLOW%Lite Pierce LC%CONTINUE%
-ItemDisplay[cm2 STAT335>1]: %NAME% %STAT335%% %BLUE%Cold Pierce LC%CONTINUE%
-ItemDisplay[cm2 STAT336>1]: %NAME% %STAT336%% %GREEN%Psn Pierce LC%CONTINUE%
+ItemDisplay[cm2 STAT329>2]: %NAME% %STAT329%% %RED%Fire Dmg %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT330>2]: %NAME% %STAT330%% %YELLOW%Lite Dmg %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT331>2]: %NAME% %STAT331%% %BLUE%Cold Dmg %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT332>2]: %NAME% %STAT332%% %GREEN%Psn Dmg %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT357>2]: %NAME% %STAT357%% %CORAL%Magic Dmg %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT333>1]: %NAME% %STAT333%% %RED%Fire Pierce %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT334>1]: %NAME% %STAT334%% %YELLOW%Lite Pierce %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT335>1]: %NAME% %STAT335%% %BLUE%Cold Pierce %GRAY%LC%CONTINUE%
+ItemDisplay[cm2 STAT336>1]: %NAME% %STAT336%% %GREEN%Psn Pierce %GRAY%LC%CONTINUE%
 ItemDisplay[cm2 ((STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2 OR STAT357>2 OR STAT333>1 OR STAT334>1 OR STAT335>1 OR STAT336>1) AND LIFE>0)]: %NAME% %RED%+%LIFE% Life%CONTINUE%
 ItemDisplay[cm2 (STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2 OR STAT357>2 OR STAT333>1 OR STAT334>1 OR STAT335>1 OR STAT336>1 OR MAXDMG>3)]: %NAME%%PX-9B%%MAP-97%%CONTINUE%
 // ItemDisplay[cm2 STR=5]: %NAME% %RED%STR%CONTINUE%
