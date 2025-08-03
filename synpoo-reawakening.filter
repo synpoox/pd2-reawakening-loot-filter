@@ -1488,7 +1488,7 @@ ItemDisplay[EQ2 UNI !ID !(xea OR xhn OR xth OR xtp OR xui OR ELT) FILTLVL>3]: //
 ItemDisplay[UNI !ID (buc OR sml OR lrg OR kit OR spk OR tow OR bsh OR gts OR xuc OR xml OR xrg OR xit OR xpk OR urg OR uml OR upk) FILTLVL>3]:
 //EQ4 - Gloves
 ItemDisplay[EQ4 UNI !ID !(vgl OR tgl OR xvg OR xmg OR ELT) FILTLVL>3]:
-ItemDisplay[EQ4 UNI !ID (ulg) FILTLVL>3]:
+// ItemDisplay[EQ4 UNI !ID (ulg) FILTLVL>3]: // Bramble Mitts
 //EQ6 BELTS
 ItemDisplay[UNI !ID (lbl OR vbl OR mbl OR tbl OR hbl) FILTLVL>3]:
 //EQ5 BOOTS
