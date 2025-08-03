@@ -26,7 +26,7 @@ ItemDisplayFilterName[]: ÿc4Base //Filter Level 1
 ItemDisplayFilterName[]: ÿc3[ Light ] ÿc0- ÿc1No ÿc0TP/ID Scrolls //Filter Level 2
 ItemDisplayFilterName[]: ÿc<[ Medium ] ÿc0- ÿc1No ÿc0FGems/Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
 ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0PGems/Low Runes/Low Uni/Sets//Filter Level 4
-ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Trash Magic Jewels //Filter Level 5
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Trash Magic Jewels/Magic Maps //Filter Level 5
 ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewels //Filter Level 6
 ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Plain +3 Magic Circlets //Filter Level 7
 ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Plain +3 Magic Amulets//Filter Level 8
@@ -606,6 +606,9 @@ ItemDisplay[NMAG !ID SHOP (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID
 
 
 //-----------------------------MAPS - THIS SECTION TAKEN FROM DAVE AND MARK OF HIMFILTER-----------------------------
+//Hide magic maps
+ItemDisplay[MAPTIER>0 MAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) FILTLVL>4]:
+
 // Map Tier Tags
 ItemDisplay[MAPTIER=1]: %GREEN%[T1] %CONTINUE%
 ItemDisplay[MAPTIER=2]: %YELLOW%[T2] %CONTINUE%
@@ -1803,39 +1806,39 @@ ItemDisplay[cm1 (MANA>12 AND LIFE>15)]: %RED%Life%TAN%+%PURPLE%Mana %GRAY%Small 
 ItemDisplay[cm1 (MANA>12 AND LIFE>11)]: %RED%Life%TAN%+%PURPLE%Mana %GRAY%Small Charm%PX-9B%%MAP-97%
 ItemDisplay[cm1 (MANA>12 AND FHR>0)]: %ORANGE%FHR %PURPLE%Mana %GRAY%Small Charm%PX-9B%%MAP-97%
 ItemDisplay[cm1 ((MAXDMG>1 AND LIFE>0) OR (MAXDMG>0 AND LIFE>9))]: %TAN%Max Dmg %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 (MAXDMG>1 AND DEX>0)]: %TAN%Max Dmg %GREEN%dex %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 (MAXDMG>1 AND STR>0)]: %TAN%Max Dmg %DARK_GREEN%str %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 (MAXDMG>1 AND FRW>0)]: %TAN%Max Dmg %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 (MAXDMG>1 AND FHR>0)]: %TAN%Max Dmg %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 MAXDMG>1]: %TAN%Max Dmg %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (RES>0 AND LIFE>0)]: %PURPLE%ALL %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (RES>0 AND FRW>0)]: %PURPLE%ALL %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (RES>0 AND FHR>0)]: %PURPLE%ALL %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (RES>0 AND MFIND>0)]: %PURPLE%ALL %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI RES>0]: %PURPLE%5 All Res %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI RES>0]: %PURPLE%ALL %WHITE%Res %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((FRES>9 AND LIFE>0) OR (FRES>4 AND LIFE>10) OR (FRES>0 AND LIFE>16))]: %RED%Fire %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((LRES>9 AND LIFE>0) OR (LRES>4 AND LIFE>10) OR (LRES>0 AND LIFE>16))]: %YELLOW%Light %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((CRES>9 AND LIFE>0) OR (CRES>4 AND LIFE>10) OR (CRES>0 AND LIFE>16))]: %BLUE%Cold %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((PRES>9 AND LIFE>0) OR (PRES>4 AND LIFE>10) OR (PRES>0 AND LIFE>16))]: %GREEN%Psn %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (FRES>4 AND FRW>0)]: %RED%Fire %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (LRES>4 AND FRW>0)]: %YELLOW%Light %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (CRES>4 AND FRW>0)]: %BLUE%Cold %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (PRES>4 AND FRW>0)]: %GREEN%Psn %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (FRES>4 AND FHR>0)]: %RED%Fire %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (LRES>4 AND FHR>0)]: %YELLOW%Light %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (CRES>4 AND FHR>0)]: %BLUE%Cold %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI (PRES>4 AND FHR>0)]: %GREEN%Psn %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((FRES>9 AND MFIND>0) OR (FRES>4 AND MFIND>3) OR (FRES>0 AND MFIND>5))]: %RED%Fire %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((LRES>9 AND MFIND>0) OR (LRES>4 AND MFIND>3) OR (LRES>0 AND MFIND>5))]: %YELLOW%Light %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((CRES>9 AND MFIND>0) OR (CRES>4 AND MFIND>3) OR (CRES>0 AND MFIND>5))]: %BLUE%Cold %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI ((PRES>9 AND MFIND>0) OR (PRES>4 AND MFIND>3) OR (PRES>0 AND MFIND>5))]: %GREEN%Psn %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI FRES>10]: %NAME% %RED%Fire Res%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI LRES>10]: %NAME% %YELLOW%Light Res%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI CRES>10]: %NAME% %BLUE%Cold Res%PX-9B%%MAP-97%
-ItemDisplay[cm1 !UNI PRES>10]: %NAME% %GREEN%Psn Res%PX-9B%%MAP-97%
-ItemDisplay[cm1 MFIND>6]: %NAME% %GREEN%MF%CONTINUE%
-ItemDisplay[cm1 LIFE>18]: %NAME% %RED%Life%CONTINUE%
+ItemDisplay[cm1 (MAXDMG>1 AND DEX>0)]: %TAN%%MAXDMG%Max%GRAY%/%GREEN%%DEX%Dex %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 (MAXDMG>1 AND STR>0)]: %TAN%%MAXDMG%Max%GRAY%/%GREEN%%STR%Str %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 (MAXDMG>1 AND FRW>0)]: %TAN%%MAXDMG%Max%GRAY%/%ORANGE%%FRW%Frw %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 (MAXDMG>1 AND FHR>0)]: %TAN%%MAXDMG%Max%GRAY%/%ORANGE%%FHR%Fhr %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 MAXDMG>2]: %TAN%%MAXDMG%Max %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (RES>0 AND LIFE>0)]: %PURPLE%%RES%% All %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (RES>0 AND FRW>0)]: %PURPLE%%RES%% All %WHITE%Res %ORANGE%FRW %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (RES>0 AND FHR>0)]: %PURPLE%%RES%% All %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (RES>0 AND MFIND>0)]: %PURPLE%%RES%% All %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
+// ItemDisplay[cm1 !UNI RES>0]: %PURPLE%5 All Res %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI RES>0]: %PURPLE%%RES%% All %WHITE%Res %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((FRES>9 AND LIFE>0) OR (FRES>4 AND LIFE>10) OR (FRES>0 AND LIFE>16))]: %RED%%FRES%% Fire %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((LRES>9 AND LIFE>0) OR (LRES>4 AND LIFE>10) OR (LRES>0 AND LIFE>16))]: %YELLOW%%LRES%% Light %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((CRES>9 AND LIFE>0) OR (CRES>4 AND LIFE>10) OR (CRES>0 AND LIFE>16))]: %BLUE%%CRES%% Cold %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((PRES>9 AND LIFE>0) OR (PRES>4 AND LIFE>10) OR (PRES>0 AND LIFE>16))]: %GREEN%%PRES%% Psn %WHITE%Res %RED%Life %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (FRES>4 AND FRW>0)]: %RED%%FRES%% Fire %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (LRES>4 AND FRW>0)]: %YELLOW%%LRES%% Light %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (CRES>4 AND FRW>0)]: %BLUE%%CRES%% Cold %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (PRES>4 AND FRW>0)]: %GREEN%%PRES%% Psn %WHITE%Res %ORANGE%frw %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (FRES>4 AND FHR>0)]: %RED%%FRES%% Fire %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (LRES>4 AND FHR>0)]: %YELLOW%%LRES%% Light %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (CRES>4 AND FHR>0)]: %BLUE%%CRES%% Cold %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI (PRES>4 AND FHR>0)]: %GREEN%%PRES%% Psn %WHITE%Res %ORANGE%FHR %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((FRES>9 AND MFIND>0) OR (FRES>4 AND MFIND>3) OR (FRES>0 AND MFIND>5))]: %RED%%FRES%% Fire %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((LRES>9 AND MFIND>0) OR (LRES>4 AND MFIND>3) OR (LRES>0 AND MFIND>5))]: %YELLOW%%LRES%% Light %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((CRES>9 AND MFIND>0) OR (CRES>4 AND MFIND>3) OR (CRES>0 AND MFIND>5))]: %BLUE%%CRES%% Cold %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI ((PRES>9 AND MFIND>0) OR (PRES>4 AND MFIND>3) OR (PRES>0 AND MFIND>5))]: %GREEN%%PRES%% Psn %WHITE%Res %GREEN%MF %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI FRES>10]: %NAME% %RED%%FRES%% Fire Res %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI LRES>10]: %NAME% %YELLOW%%LRES%% Light Res %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI CRES>10]: %NAME% %BLUE%%CRES%% Cold Res %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 !UNI PRES>10]: %NAME% %GREEN%%PRES%% Psn Res %GRAY%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 MFIND>6]: %NAME% %GREEN%+%MFIND% MF%CONTINUE%
+ItemDisplay[cm1 LIFE>18]: %NAME% %RED%+%LIFE% Life%CONTINUE%
 ItemDisplay[cm1 !UNI ID !(LIFE>10 OR MANA>10 OR MAXDMG>1 OR DEX>0 OR STR>0 OR FRW>0 OR FHR>0 OR RES>0 OR MFIND>0 OR FRES>7 OR LRES>7 OR CRES>7 OR PRES>7)]: //hide bad small charms
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????
