@@ -10,8 +10,8 @@
 
 //The latest version of this filter can be found at: https://raw.githubusercontent.com/synpoox/pd2-reawakening-loot-filter/main/synpoo-reawakening.filter
 
-//Features: 	This filter calls out RA specific items, good identified magic items, and hides most identified trash magic items.
-//Warning: 	It's not perfect, is constantly a WIP and it has some stuff specifically catered to me. If you don't like something you should know how to make your own changes!
+//Features: 	This filter calls out RA specific items, good identified magic items, and hides most identified trash magic items. It's intended to be used with Magic Items Drop Identified
+//Warning:    	It's not perfect, is constantly a WIP and it has some stuff specifically catered to me. If you don't like something you should know how to make your own changes!
 //Reference: 	https://projectdiablo2.miraheze.org/wiki/Item_Filtering#Filter_Codes
 
 //Credits:
@@ -22,18 +22,18 @@
 //-----------------------------------------------------------------------------------
 // FILTER CONFIG
 //-----------------------------------------------------------------------------------
-ItemDisplayFilterName[]: Ã¿c4Base //Filter Level 1
-ItemDisplayFilterName[]: Ã¿c3[ Light ] Ã¿c0- Ã¿c1No Ã¿c0TP/ID Scrolls //Filter Level 2
-ItemDisplayFilterName[]: Ã¿c<[ Medium ] Ã¿c0- Ã¿c1No Ã¿c0FGems/Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
-ItemDisplayFilterName[]: Ã¿c9[ Semi-Strict ] Ã¿c0- Ã¿c1No Ã¿c0PGems/Low Runes/Low Uni/Sets//Filter Level 4
-ItemDisplayFilterName[]: Ã¿c9[ Semi-Strict+ ] Ã¿c0- Ã¿c1No Ã¿c0Trash Magic Jewels/Magic Maps //Filter Level 5
-ItemDisplayFilterName[]: Ã¿c8[ Strict ] Ã¿c0- Ã¿c1No Ã¿c0Rare Items except Circ/Jewelry/Jewels //Filter Level 6
-ItemDisplayFilterName[]: Ã¿c8[ Strict+ ] Ã¿c0- Ã¿c1No Ã¿c0Plain +3 Magic Circlets //Filter Level 7
-ItemDisplayFilterName[]: Ã¿c![ Very-Strict ] Ã¿c0- Ã¿c1No Ã¿c0Plain +3 Magic Amulets//Filter Level 8
-ItemDisplayFilterName[]: Ã¿c![ Very-Strict+ ] Ã¿c0- Ã¿c1No Ã¿c0Plain Skillers //Filter Level 9
-ItemDisplayFilterName[]: Ã¿c1[ Ultra-Strict ] Ã¿c0- Ã¿c1No Ã¿c0Magic Large Charms //Filter Level 10
-ItemDisplayFilterName[]: Ã¿c1[ Ultra-Strict+ ] Ã¿c0- Ã¿c1No Ã¿c0Magic Jewels //Filter Level 11
-ItemDisplayFilterName[]: Ã¿c;[ Omega-Strict ] Ã¿c0- Ã¿c1No Ã¿c0Non-Superior Bases/Magic Items //Filter Level 12
+ItemDisplayFilterName[]: ÿc4Base //Filter Level 1
+ItemDisplayFilterName[]: ÿc3[ Light ] ÿc0- ÿc1No ÿc0TP/ID Scrolls //Filter Level 2
+ItemDisplayFilterName[]: ÿc<[ Medium ] ÿc0- ÿc1No ÿc0FGems/Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0PGems/Low Runes/Low Uni/Sets//Filter Level 4
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Trash Magic Jewels/Magic Maps //Filter Level 5
+ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewels //Filter Level 6
+ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Plain +3 Magic Circlets //Filter Level 7
+ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Plain +3 Magic Amulets//Filter Level 8
+ItemDisplayFilterName[]: ÿc![ Very-Strict+ ] ÿc0- ÿc1No ÿc0Plain Skillers //Filter Level 9
+ItemDisplayFilterName[]: ÿc1[ Ultra-Strict ] ÿc0- ÿc1No ÿc0Magic Large Charms //Filter Level 10
+ItemDisplayFilterName[]: ÿc1[ Ultra-Strict+ ] ÿc0- ÿc1No ÿc0Magic Jewels //Filter Level 11
+ItemDisplayFilterName[]: ÿc;[ Omega-Strict ] ÿc0- ÿc1No ÿc0Non-Superior Bases/Magic Items //Filter Level 12
 
 //-----------------------------------------------------------------------------------
 // QUEST ITEMS
@@ -1499,7 +1499,7 @@ ItemDisplay[UNI !ID (pa3 OR pae) FILTLVL>3]:
 ItemDisplay[ARMOR UNI !ID]: %BORDER-62%%NAME%%MAP-0E%
 
 //+----------------+
-//Â¦ Unique Weapons Â¦
+//¦ Unique Weapons ¦
 //+----------------+
 
 //HIDE TRASH
@@ -1551,7 +1551,7 @@ ItemDisplay[SET !ID rin CLVL>89 FILTLVL>4]: // Hide set rings after 89
 ItemDisplay[SET !ID (rin OR amu)]: %BORDER-62%%NAME%%MAP-84%
 
 //+-----------+
-//Â¦ Set Items Â¦
+//¦ Set Items ¦
 //+-----------+
 //Aldur's Watchtower (Druid)
 ItemDisplay[SET !ID (9mt OR uul) FILTLVL>3]:
