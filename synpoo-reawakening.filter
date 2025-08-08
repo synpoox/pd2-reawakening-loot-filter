@@ -22,18 +22,18 @@
 //-----------------------------------------------------------------------------------
 // FILTER CONFIG
 //-----------------------------------------------------------------------------------
-ItemDisplayFilterName[]: ùc4Base //Filter Level 1
-ItemDisplayFilterName[]: ùc3[ Light ] ùc0- ùc1No ùc0TP/ID Scrolls //Filter Level 2
-ItemDisplayFilterName[]: ùc<[ Medium ] ùc0- ùc1No ùc0FGems/Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
-ItemDisplayFilterName[]: ùc9[ Semi-Strict ] ùc0- ùc1No ùc0PGems/Low Runes/Low Uni/Sets//Filter Level 4
-ItemDisplayFilterName[]: ùc9[ Semi-Strict+ ] ùc0- ùc1No ùc0Trash Magic Jewels/Magic Maps //Filter Level 5
-ItemDisplayFilterName[]: ùc8[ Strict ] ùc0- ùc1No ùc0Rare Items except Circ/Jewelry/Jewels //Filter Level 6
-ItemDisplayFilterName[]: ùc8[ Strict+ ] ùc0- ùc1No ùc0Plain +3 Magic Circlets //Filter Level 7
-ItemDisplayFilterName[]: ùc![ Very-Strict ] ùc0- ùc1No ùc0Plain Skillers//Filter Level 8
-ItemDisplayFilterName[]: ùc![ Very-Strict+ ] ùc0- ùc1No ùc0Plain +3 Magic Amulets //Filter Level 9
-ItemDisplayFilterName[]: ùc1[ Ultra-Strict ] ùc0- ùc1No ùc0Magic Large Charms //Filter Level 10
-ItemDisplayFilterName[]: ùc1[ Ultra-Strict+ ] ùc0- ùc1No ùc0Magic Jewels //Filter Level 11
-ItemDisplayFilterName[]: ùc;[ Omega-Strict ] ùc0- ùc1No ùc0Non-Superior Bases/Magic Items //Filter Level 12
+ItemDisplayFilterName[]: ˇc4Base //Filter Level 1
+ItemDisplayFilterName[]: ˇc3[ Light ] ˇc0- ˇc1No ˇc0TP/ID Scrolls //Filter Level 2
+ItemDisplayFilterName[]: ˇc<[ Medium ] ˇc0- ˇc1No ˇc0FGems/Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
+ItemDisplayFilterName[]: ˇc9[ Semi-Strict ] ˇc0- ˇc1No ˇc0PGems/Low Runes/Low Uni/Sets//Filter Level 4
+ItemDisplayFilterName[]: ˇc9[ Semi-Strict+ ] ˇc0- ˇc1No ˇc0Trash Magic Jewels/Magic Maps //Filter Level 5
+ItemDisplayFilterName[]: ˇc8[ Strict ] ˇc0- ˇc1No ˇc0Rare Items except Circ/Jewelry/Jewels //Filter Level 6
+ItemDisplayFilterName[]: ˇc8[ Strict+ ] ˇc0- ˇc1No ˇc0Plain +3 Magic Circlets //Filter Level 7
+ItemDisplayFilterName[]: ˇc![ Very-Strict ] ˇc0- ˇc1No ˇc0Plain Skillers//Filter Level 8
+ItemDisplayFilterName[]: ˇc![ Very-Strict+ ] ˇc0- ˇc1No ˇc0Plain +3 Magic Amulets //Filter Level 9
+ItemDisplayFilterName[]: ˇc1[ Ultra-Strict ] ˇc0- ˇc1No ˇc0Magic Large Charms //Filter Level 10
+ItemDisplayFilterName[]: ˇc1[ Ultra-Strict+ ] ˇc0- ˇc1No ˇc0Magic Jewels //Filter Level 11
+ItemDisplayFilterName[]: ˇc;[ Omega-Strict ] ˇc0- ˇc1No ˇc0Non-Superior Bases/Magic Items //Filter Level 12
 
 //-----------------------------------------------------------------------------------
 // QUEST ITEMS
