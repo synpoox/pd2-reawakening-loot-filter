@@ -6,7 +6,7 @@
 //??           Discord: synpoo           ??
 //??                                     ??
 //?????????????????????????????????????????
-// Version 11.0.0
+// Version 11.1.0
 
 //The latest version of this filter can be found at: https://raw.githubusercontent.com/synpoox/pd2-reawakening-loot-filter/main/synpoo-reawakening.filter
 
@@ -25,13 +25,13 @@
 ItemDisplayFilterName[]: ÿc4Base //Filter Level 1
 ItemDisplayFilterName[]: ÿc3[ Light ] ÿc0- ÿc1No ÿc0TP/ID Scrolls //Filter Level 2
 ItemDisplayFilterName[]: ÿc<[ Medium ] ÿc0- ÿc1No ÿc0FGems/Life/Mana Pots/Trash Magic Items w/o +3 //Filter Level 3
-ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0PGems/Low Runes/Low Uni/Sets//Filter Level 4
-ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0Trash Magic Jewels/Magic Maps //Filter Level 5
-ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0Rare Items except Circ/Jewelry/Jewels //Filter Level 6
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict ] ÿc0- ÿc1No ÿc0T0 Uniques/T0 Sets/PGems/Low Runes//Filter Level 4
+ItemDisplayFilterName[]: ÿc9[ Semi-Strict+ ] ÿc0- ÿc1No ÿc0T1 Uniques/T1 Sets/Trash Magic Jewels/Magic Maps //Filter Level 5
+ItemDisplayFilterName[]: ÿc8[ Strict ] ÿc0- ÿc1No ÿc0T2 Uniques/T2 Sets, Rare Items except Circ/Jewelry/Jewels //Filter Level 6
 ItemDisplayFilterName[]: ÿc8[ Strict+ ] ÿc0- ÿc1No ÿc0Plain +3 Magic Circlets //Filter Level 7
 ItemDisplayFilterName[]: ÿc![ Very-Strict ] ÿc0- ÿc1No ÿc0Plain Skillers//Filter Level 8
 ItemDisplayFilterName[]: ÿc![ Very-Strict+ ] ÿc0- ÿc1No ÿc0Plain +3 Magic Amulets //Filter Level 9
-ItemDisplayFilterName[]: ÿc1[ Ultra-Strict ] ÿc0- ÿc1No ÿc0Magic Large Charms //Filter Level 10
+ItemDisplayFilterName[]: ÿc1[ Ultra-Strict ] ÿc0- ÿc1No ÿc0Magic Large Charms/T3 Uniques //Filter Level 10
 ItemDisplayFilterName[]: ÿc1[ Ultra-Strict+ ] ÿc0- ÿc1No ÿc0Magic Jewels //Filter Level 11
 ItemDisplayFilterName[]: ÿc;[ Omega-Strict ] ÿc0- ÿc1No ÿc0Non-Superior Bases/Magic Items //Filter Level 12
 
@@ -142,13 +142,13 @@ ItemDisplay[(gpbs OR gpb) FILTLVL>3]:
 ItemDisplay[(gpys OR gpy) FILTLVL>3]:
 ItemDisplay[(skzs OR skz) FILTLVL>3]:
 
-ItemDisplay[gpvs OR gpv]: %BORDER-CB%%PURPLE%Perfect Amethyst //Perfect Gems
-ItemDisplay[gpws OR gpw]: %BORDER-CB%%WHITE%Perfect Diamond
-ItemDisplay[gpgs OR gpg]: %BORDER-CB%%GREEN%Perfect Emerald
-ItemDisplay[gprs OR gpr]: %BORDER-CB%%RED%Perfect Ruby
-ItemDisplay[gpbs OR gpb]: %BORDER-CB%%BLUE%Perfect Sapphire
-ItemDisplay[gpys OR gpy]: %BORDER-CB%%YELLOW%Perfect Topaz
-ItemDisplay[skzs OR skz]: %BORDER-CB%%GRAY%Perfect Skull
+ItemDisplay[gpvs OR gpv FILTLVL<4]: %BORDER-CB%%PURPLE%Perfect Amethyst //Perfect Gems
+ItemDisplay[gpws OR gpw FILTLVL<4]: %BORDER-CB%%WHITE%Perfect Diamond
+ItemDisplay[gpgs OR gpg FILTLVL<4]: %BORDER-CB%%GREEN%Perfect Emerald
+ItemDisplay[gprs OR gpr FILTLVL<4]: %BORDER-CB%%RED%Perfect Ruby
+ItemDisplay[gpbs OR gpb FILTLVL<4]: %BORDER-CB%%BLUE%Perfect Sapphire
+ItemDisplay[gpys OR gpy FILTLVL<4]: %BORDER-CB%%YELLOW%Perfect Topaz
+ItemDisplay[skzs OR skz FILTLVL<4]: %BORDER-CB%%GRAY%Perfect Skull
 
 //?                           ????? Rules for Ignoring Misc Items ?????                           ?
 ItemDisplay[yps CLVL>70]: //Ignore all Antidote Potions
@@ -738,12 +738,21 @@ ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
 ItemDisplay[(MAPTIER>0 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
 
 // Map End Wrapper by Tier
-ItemDisplay[MAPTIER=1]: %MAP-62%%NAME% %GREEN%{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=2]: %MAP-62%%NAME% %YELLOW%{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=3]: %MAP-62%%NAME% %ORANGE%{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=4]: %MAP-62%%NAME% %RED%{%NAME%}%CONTINUE%
-ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55) !ID]: %MAP-62%%NAME% %GOLD%{%NAME%}%CONTINUE%
-ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55) ID]: %MAP-62%%NAME% %GOLD%{%NAME%}%CONTINUE%
+ItemDisplay[(NMAG OR RARE) MAPTIER=1]: %MAP-62%%NAME% %GREEN%{%NAME%}%CONTINUE%
+ItemDisplay[(NMAG OR RARE) MAPTIER=2]: %MAP-62%%NAME% %YELLOW%{%NAME%}%CONTINUE%
+ItemDisplay[(NMAG OR RARE) MAPTIER=3]: %MAP-62%%NAME% %ORANGE%{%NAME%}%CONTINUE%
+ItemDisplay[(NMAG OR RARE) MAPTIER=4]: %MAP-62%%NAME% %RED%{%NAME%}%CONTINUE%
+ItemDisplay[(NMAG OR RARE) (t51 OR t52 OR t53 OR t54 OR t55) !ID]: %MAP-62%%NAME% %GOLD%{%NAME%}%CONTINUE%
+ItemDisplay[(NMAG OR RARE) (t51 OR t52 OR t53 OR t54 OR t55) ID]: %MAP-62%%NAME% %GOLD%{%NAME%}%CONTINUE%
+
+// Callout for magics on Filter level 1-4
+ItemDisplay[MAG FILTLVL<5 MAPTIER=1]: %MAP-62%%NAME% %GREEN%{%NAME%}%CONTINUE%
+ItemDisplay[MAG FILTLVL<5 MAPTIER=2]: %MAP-62%%NAME% %YELLOW%{%NAME%}%CONTINUE%
+ItemDisplay[MAG FILTLVL<5 MAPTIER=3]: %MAP-62%%NAME% %ORANGE%{%NAME%}%CONTINUE%
+ItemDisplay[MAG FILTLVL<5 MAPTIER=4]: %MAP-62%%NAME% %RED%{%NAME%}%CONTINUE%
+ItemDisplay[MAG FILTLVL<5 (t51 OR t52 OR t53 OR t54 OR t55) !ID]: %MAP-62%%NAME% %GOLD%{%NAME%}%CONTINUE%
+ItemDisplay[MAG FILTLVL<5 (t51 OR t52 OR t53 OR t54 OR t55) ID]: %MAP-62%%NAME% %GOLD%{%NAME%}%CONTINUE%
+
 ItemDisplay[(t61 OR t62)]: %MAP-62%%NAME% %PURPLE%{%NAME%}%CONTINUE%
 
 
@@ -874,7 +883,7 @@ ItemDisplay[MAG !ID rin CLVL>29]: //Ignore unidentified magic rings at level 30+
 //ItemDisplay[MAG !ID cm2]: %BLUE%%NAME% %WHITE%[%GRAY%Lv.%ILVL%%WHITE%] //Magical Unid SC/GC
 ItemDisplay[MAG !ID (cm1 OR cm2 OR cm3 OR jew)]: %DOT-97%%BLUE%%NAME% %WHITE%[%GRAY%%ILVL%%WHITE%]//Magical Unid SC/GC
 //ItemDisplay[MAG !ID cm2 CLVL<76]: %BLUE%%NAME% //Magical Unid Large Charm
-ItemDisplay[RARE !ID (jew OR rin OR amu)]: %DOT-9B%%YELLOW%%NAME% %WHITE%[%GRAY%%ILVL%%WHITE%] //Rare Jewel, Ring, Ammy
+ItemDisplay[RARE !ID (jew OR rin OR amu)]: %DOT-9B%%TIER-5%%YELLOW%%NAME% %WHITE%[%GRAY%%ILVL%%WHITE%] //Rare Jewel, Ring, Ammy
 ItemDisplay[RARE !ID !ETH (ci0 OR ci1 OR ci2 OR ci3)]: %DOT-9B%%YELLOW%%NAME% //Rare Circlets
 ItemDisplay[MAG ID !ETH (ci0 OR ci1 OR ci2 OR ci3)]: %DOT-9B%%NAME%%CONTINUE% //Mag Circlets
 //-----------------------------------------------------------------------------------
@@ -950,7 +959,7 @@ ItemDisplay[jew !UNI !SET RES>0]: %PURPLE%%RES%% ALL Res %NAME%%CONTINUE%{%NAME%
 
 
 // Top line formatting
-ItemDisplay[jew ID (STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9)]: %DOT-50%%NAME%%CL%%CONTINUE%{%NAME%}
+ItemDisplay[jew ID (STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>29 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR STR+DEX>9)]: %DOT-50%%NAME%%CL%%CONTINUE%{%NAME%}
 
 // BIG jewel callouts
 ItemDisplay[jew FHR>0 STAT91<0 RES>0]: %NAME%%PURPLE%BIG %CONTINUE%
@@ -1472,162 +1481,363 @@ ItemDisplay[ETH RARE]: %RED%ETH %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ETH]: %GRAY%%NAME%%CONTINUE%
 ItemDisplay[MAG !ETH]: %BLUE%%NAME%%CONTINUE%
 ItemDisplay[RARE !ETH]: %YELLOW%%NAME%%CONTINUE%
-ItemDisplay[SET !ETH]: %BORDER-84%%GREEN%%NAME%%MAP-84%%CONTINUE%
-ItemDisplay[UNI !ETH]: %BORDER-62%%GOLD%%NAME%%MAP-0E%%CONTINUE%
 ItemDisplay[!(NMAG OR MAG OR RARE OR SET OR UNI)]: %ORANGE%%NAME%%CONTINUE%
 
+ItemDisplay[(UNI OR SET) !ID]: %NAME%%CONTINUE%
+
 //??????????????????????????????????????????????????????????????
-//?                  ????? UNIQUE ITEMS ?????                  ?
+//?               ????? UNIQUE/SET ITEMS ?????                 ?
 //??????????????????????????????????????????????????????????????
 
-//EQ1 - Helms
-ItemDisplay[EQ1 UNI !ID (cap OR skp OR hlm OR fhl OR ghm OR msk OR crn OR bhm OR xap OR xkp OR xlm OR xsk OR xrn OR xhl) FILTLVL>3]: 
-//EQ2 - Body Armor
-ItemDisplay[EQ2 UNI !ID !(xea OR xhn OR xth OR xtp OR xui OR ELT) FILTLVL>3]:
-//EQ3 - Shields
-ItemDisplay[EQ3 UNI !ID (buc OR sml OR lrg OR kit OR spk OR tow OR bsh OR gts OR xuc OR xml OR xrg OR xit OR xpk OR urg OR uml OR upk) FILTLVL>3]:
-//EQ4 - Gloves
-ItemDisplay[EQ4 UNI !ID !(vgl OR tgl OR xvg OR xmg OR ELT) FILTLVL>3]:
-// ItemDisplay[EQ4 UNI !ID (ulg) FILTLVL>3]: // Bramble Mitts
-//EQ5 BOOTS
-ItemDisplay[EQ5 UNI !ID (vbt OR mbt OR hbt) FILTLVL>3]:
-//EQ6 BELTS
-ItemDisplay[EQ6 UNI !ID (lbl OR vbl OR mbl OR tbl OR hbl) FILTLVL>3]:
-//CL3 - PALADIN SHIELDS
-ItemDisplay[CL3 UNI !ID (pa3 OR pae) FILTLVL>3]:
-//CL4 - NECROMANCER HEADS
-ItemDisplay[CL4 UNI !ID FILTLVL>3]:
+//-----------------------------------------------------------------------------------
+// IMPORTANT DROPS
+// Filter level 1-3 Shows all set/unique
+// Filter level 4 Shows T1,2,3,GG
+// Filter level 5 Shows T2,3,GG
+// Filter level 6-9 Shows T3,GG
+// Filter level 10+  Shows GG
+//-----------------------------------------------------------------------------------
 
+//  Boss Items
+//-----------------------------------------------------------------------------------
+// The Third Eye - Amulet
+// Cage of the Unsullied - Boneweave
+// Band of Skulls OR Worldshaper's Binding - Troll Belt
+// Aidans Scar - Scissors Suwayyah
+// Cage of the Unsullied - Boneweave
+// Dark Abyss - Lacquered Plate
+// Band of Skulls - Troll Belt
+// Itheraels Path OR Malthael's Shadow Steps - Mirrored Boots
+// Overlords Helm - Giant Conch
+// Hadriels Hand - Conquest Sword 
 
-ItemDisplay[ARMOR UNI !ID]: %BORDER-62%%NAME%%MAP-0E%
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl OR 7bs OR 7cr2)]: %BORDER-62%%NAME%%MAP-0E%
 
-//+----------------+
-//� Unique Weapons �
-//+----------------+
+// GG Unique Callouts
+//-----------------------------------------------------------------------------------
+// Amulet
+// Ring
+// Griffons Eye - Diadem
+// Herald of Zakarum - Gilded Shield
+// Deaths Fathom OR The Disintegrator - Dimensional Shard
+// Templars Might or Tyraels Might Sacred Armor
+// Arachnid Mesh OR Chronowrap - Spiderweb Sash
+// SHAKO Harlequin Crest Shako
+// Veil of Steel or Nightwings Veil Spired Helm
+// Andariels Visage - Demonhead
+// Crown of Ages - Corona
+// Stormshield Monarch
+// Spirit Ward Ward
+// Stone Crusher or Schaefers Hammer Legendary Mallet
+// Earth Shifter or The Cranium Basher Thunder Maul
+// Astreons Iron Ward - Caduceus
+// Brimstone Rain - Shillelagh
+// Mang Songs Lesson - Archon Staff
+// Deaths Web - Unearthed Wand
+// Gore Rider - War Boots
+// The Grandfather - Colossus Blade
+// Siggard's Staunch OR Warbringer - Colossus Girdle
+// Kiras Guardian - Tiara
+// Darkforce - Spawn Bloodlord Skull
+// Ormus Robes - Dusk Shroud
+// Arkaines Valor - Balrog Skin
+// Steel Carapace OR Infernal Mantle - Shadow Plate
+// The Reapers Toll - Thresher
 
-//HIDE TRASH
-//WP1 - Axes
-ItemDisplay[WP1 UNI !ID !ELT FILTLVL>3]:
-//Elite Unique Axes
-ItemDisplay[UNI !ID (7mp OR 72a OR 7ha OR 7gi) FILTLVL>3]:
-//WP2 - MACES
-ItemDisplay[WP2 UNI !ID !(9gm OR 9fl OR ELT) FILTLVL>3]:
-ItemDisplay[WP2 UNI !ID (7cl OR 7sp OR 7mt) FILTLVL>3]:
-//WP3 - Swords
-ItemDisplay[WP3 UNI !ID !ELT FILTLVL>3]:
-ItemDisplay[WP3 UNI !ID (flc OR 7sb OR 7sm) FILTLVL>3]:
-//WP4 - Daggers
-ItemDisplay[WP4 UNI !ID !ELT FILTLVL>3]:
-ItemDisplay[UNI !ID 7di FILTLVL>3]:
-//WP5 - Throwing Weapons
-ItemDisplay[UNI !ID (9tk OR 9ta) FILTLVL>3]:
-//WP6 - Javelins
-//ItemDisplay[UNI !ID (7s7 OR 7gl OR 7ts) FILTLVL>3]:
-//WP7 - Spears
-ItemDisplay[UNI !ID (spr OR tri OR brn OR spt OR pik OR 9sr OR 9tr OR 9br OR 9st OR 9p9) FILTLVL>3]:
-//WP8 - Polearms
-ItemDisplay[UNI !ID (bar OR vou OR scy OR pax OR hal OR wsc OR 9b7 OR 9vo OR 9s8 OR 9pa OR 9h9) FILTLVL>3]:
-ItemDisplay[UNI !ID !ETH 7sr FILTLVL>3]:
-//WP9 - Bows
-ItemDisplay[WP9 !CL7 UNI !ID !ELT FILTLVL>3]:
-//WP10 - Crossbows
-ItemDisplay[WP10 UNI !ID !(8mx OR 8hx OR 8rx OR ELT) FILTLVL>3]:
-//WP11 - Staves
-ItemDisplay[UNI !ID (sst OR lst OR cst OR bst OR wst OR 8ss OR 8bs OR 8ls) FILTLVL>3]:
-//WP12 - Wands
-ItemDisplay[WP12 UNI !ID !(ELT OR 9bw) FILTLVL>3]:
-//WP13 - Scepters
-ItemDisplay[WP13 UNI !ID !(9ws OR ELT) FILTLVL>3]:
-//CL5 - ASSASSIN ITEMS
-ItemDisplay[UNI !ID (9ar OR 7wb OR 7tw) FILTLVL>3]:
-//CL6 - SORC ITEMS
-// ItemDisplay[UNI !ID ob6 FILTLVL>3]:
-//CL7 - AMAZON ITEMS
-ItemDisplay[UNI !ID (am5 OR ame OR am9 OR am7 OR amc) FILTLVL>3]:
+ItemDisplay[UNI !ID (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR 7gd OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 7s8)]: %BORDER-62%%NAME%%MAP-0E%
 
-//show rest
-ItemDisplay[WEAPON UNI !ID]: %BORDER-62%%NAME%%MAP-0E%
+// Tier 3 Unique Callouts
+// Filter level 1-9
+//-----------------------------------------------------------------------------------
+// Crown of the Faceless - Coronet
+// Dreadweaver - Hellspawn Skull
+// Unending Resolve OR Twilight's Resolve - Hyperion
+// Veil of Light - Sacred Targe
+// Fleet Footwork - Wyrmhide
+// Izual's Redemption - Hellforge Plate
+// Stormsong - Heavenly Stone
+// Thunderstroke - Matriarchal Javelin
+// Shaftstop - Mesh Armor
+// The Gladiators Bane Wire Fleece
+// String of Ears - Demonhide Sash
+// Nosferatus Coil - Vampirefang Belt
+// Verdungos Hearty Cord - Mithril Coil
+// Soul Drainer - Vambraces
+// Occultist - Crusader Gauntlets
+// Steelrend - Ogre Gauntlets
+// Giant Skull - Bone Visage
+// Lidless Wall - Grim Shield
+// The Gavel Of Pain - Martel de Fer
+// Horizons Tornado or Stormlash - Scourge
+// Stormspire - Giant Thresher
+// Tomb Reaver - Cryptic Axe
+// Arm of King Leoric - Tomb Wand
+// Blackhand Key - Grave Wand
+// Windforce - Hydra Bow
+// War Traveler - Battle Boots
+// Snowclash - Battle Belt
+// Lightsabre or Azurewrath//  Phase Blade
+// Frostwind - Cryptic Sword
+// Alma Negra - Sacred Rondache
+// Draculs Grasp - Vampirebone Gloves
+// Steel Shade - Armet
+// Medusas Gaze - Aegis
+// Steel Pillar - War Pike
+// Boneflame - Succubus Skull
+// Ravenlore - Sky Spirit
+// Waterwalk - Sharkskin Boots
+// War Fist - Whispering Mirage
+// Martyrdom - Overseer Skull
 
-//UNIQUE and SET Rings Amulets Jewels Charms
+ItemDisplay[UNI !ID FILTLVL<10 (ci1 OR neg OR urg OR pab OR uea OR ult OR obb OR amf OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned)]: %BORDER-62%%NAME%%MAP-0E%
+
+// Tier 2 Unique Callouts
+// Filter level 1-5
+//-----------------------------------------------------------------------------------
+// Elemental Overload - Hydraskull
+// Dawnbreaker - Stalagmite
+// The Spirit Shroud - Ghost Armor
+// Jalals Mane - Totemic Mask
+// Spirit Keeper - Earth Spirit
+// Cerebus Bite - Blood Spirit
+// Cyclopean Roar - Jawbone Visor
+// Demonhorns Edge - Destroyer Helm
+// Halaberds Reign - Conqueror Crown
+// Bloodravens Charge OR Frostripper - Matriarchal Bow
+// The Oculus - Swirling Crystal
+// Skin of the Vipermagi - Serpentskin Armor
+// Thundergods Vigor - War Belt
+// Silkweave - Mesh Boots
+// Magefist - Light Gauntlets
+// Gravepalm - Sharkskin Gloves
+// Ghostflame - Legend Spike
+// Titans Grip OR Wraithgrip - Bramble Mitts  
+// Doombringer - Champion Sword
+// Suicide Branch - Burnt Wand
+// Boneshade Lich - Wand
+// Ebonbane or Phantom Dancer - Grand Matron Bow
+// Toothrow - Sharktooth Armor
+// Merman's Spocket - Wyrmhide Boots
+// Vampire Gaze - Grim Helm
+// Marrowwalk - Boneweave Boots
+// Warlords Trust - Military Axe
+// Hellslayer - Decapitator
+// Dragonscale - Zakarum Shield
+// Lava Gout - Battle Gauntlets
+// Death Cleaver - Berserker Axe
+// Skull Collector - Rune Staff
+// Eschutas Temper - Eldritch Orb
+// Shadow Dancer - Myrmidon Greaves
+
+ItemDisplay[UNI !ID FILTLVL<6 (ukp OR 6ls OR drb OR dra OR drd OR ulg OR ba6 OR bad OR bae OR amb OR oba OR xea OR zhb OR amc OR xui OR xmb OR tgl OR xvg OR 7bl OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR xh9 OR umb OR 9la OR 7bt OR pae OR xtg OR 7lw OR 7wa OR 8ws OR obc OR uhb)]: %BORDER-62%%NAME%%MAP-0E%
+
+// Tier 1 Unique Callouts
+// Filter level 1-4
+//-----------------------------------------------------------------------------------
+// Stalker's Cull - Runic Talons
+// Blackoak Shield - Luna
+// Corpsemourn - Ornate Plate
+// Guardian Angel - Templar Coat
+// Pus Spitter - Siege Crossbow
+// Denmother - Sun Spirit
+// Peasant Crown - War Hat
+// The Patriarch - Great Sword
+// Silks of the Victor - Ancient Armor
+// Leviathan - Kraken Shell
+// Plague Bearer - Rune Sword
+// Demon Machine - Chu-Ko-Nu
+// Wildspeaker - Lion Helm
+// Fenris - Alpha Helm
+
+ItemDisplay[UNI !ID FILTLVL<5 (7tw OR uml OR xar OR xlt OR 8mx OR drc OR xap OR gsd OR aar OR uld OR 9ls OR 8rx OR ba7 OR dr6)]: %BORDER-62%%NAME%%MAP-0E%
+
+// Tier 0 Unique Callouts
+// Filter level 1-4
+//-----------------------------------------------------------------------------------
+// Skullders Ire - Russet Armor
+// Razortail - Sharkskin Belt
+// Venom Grip - Demonhide Gloves
+// Ghoulhide - Heavy Bracers
+// Hellmouth - War Gauntlets
+// Atmas Wail - Embossed Plate
+// Raekor's Virtue - Guardian Crown
+// Purgatory - Archon Plate
+// Sandstorm Trek - Scarabshell Boots
+// Stoneraven - Matriarchal Spear
+// Heart Carver - Rondel
+// Bloodfist - Heavy Gloves
+// Jadetalon - Wrist Sword
+
+ItemDisplay[UNI !ID FILTLVL<5 (xpl OR zvb OR xlg OR xmg OR xhg OR xth OR baf OR utp OR uvb OR amd OR 9di OR vgl OR 7wb)]: %BORDER-62%%NAME%%MAP-0E%
+
+// Tier 0 Unique Callouts
+// Filter level 1-3
+//-----------------------------------------------------------------------------------
+// Black Hades - Chaos Armor
+// Goldwrap - Heavy Belt
+// Gorefoot - Heavy Boots
+// Treads of Cthon - Chain Boots
+// Infernostride - Demonhide Boots
+// The Hand of Broc - Leather Gloves
+// Biggins Bonnet - Cap
+// Rockstopper - Sallet
+// Radaments Sphere - Ancient Shield
+// Rune Master - Ettin Axe
+// Kuko Shakaku - Cedar Bow
+// Endlesshail - Double Bow
+// Gull Dagger
+// Viperfork - Mancatcher
+// Chromatic Ire - Cedar Staff
+// Djinn Slayer - Ataghan
+// Gimmershred - Flying Axe
+// Lacerator - Winged Axe
+// Bartucs Cut-Throat - Greater Talons
+// Ondals Wisdom - Elder Staff
+// The Jade Tan Do - Kris
+// Venom Ward - Breast Plate
+// Valkyrie Wing - Winged Helm
+// Windhammer - Ogre Maul
+// Titans Revenge - Ceremonial Javelin
+// Arreats Face - Slayer Guard
+// Homunculus - Hierophant Trophy
+// Chance Guards - Chain Gloves
+// Crown of Thieves - Grand Crown
+// Witchwild String - Short Siege Bow
+// Eaglehorn - Crusader Bow
+// Wizardspike - Bone Knife
+// Ariocs Needle - Hyperion Spear
+// Ribcracker - Quarterstaff
+// Blade of Ali Baba - Tulwar
+// Odium - Colossus Sword
+// Cloudcrack - Gothic Sword
+// Swordguard - Executioner Sword
+// Zerae's Resolve - Matriarchal Pike
+// Sacred Totem - Hellspawn Skull
+// Spike Thorn - Blade Barrier
+// Que-Hegans Wisdom - Mage Plate
+// Flamebellow - Balrog Blade
+// Firelizards Talons - Feral Claws
+// Gerkes Sanctuary - Pavise
+// Head Hunters Glory - Troll Nest
+// Grims Burning Dead Grim - Scythe
+// Wolfhowl - Fury Visor
+// Wizendraw - Long Battle Bow
+// Magewrath - Rune Bow
+// Widowmaker - Ward Bow
+// Heavenly Garb - Light Plate
+// Shatterblade - Mithril Point
+// Wraithskin OR Mind Over Matter - Diamond Mail
+// Baezils - Vortex Knout
+// Executioners Justice - Glorious Axe
+// Frostburn - Gauntlets
+// Blackbogs Sharp - Cinquedeas
+// Ursa's Nightmare - Dream Spirit
+// Buriza-Do Kyanon - Ballista
+// Duskdeep - Full Helm
+// The Impaler - War Spear
+
+ItemDisplay[UNI !ID FILTLVL<4 (xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 9gd OR ame OR neg OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR 6sw OR ltp OR 7di OR ung OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx OR fhl OR 9sr)]: %BORDER-62%%NAME%%MAP-0E%
+
+// Set GG Set Callouts
+//-----------------------------------------------------------------------------------
+// Tancreds Hobnails - Boots
+
+ItemDisplay[SET !ID lbt FILTLVL<10]: %MAP-84%%NAME%
+
+// Set Ring
+// Set Amulet
+ItemDisplay[SET !ID (amu OR rin) FILTLVL<3]: %MAP-84%%NAME%
+ItemDisplay[SET !ID (amu OR rin) FILTLVL<4]: %NAME%
+
+// Only ETH
+// Immortal Kings Stone Crusher - Ogre Maul
+// Bul-Kathos Sacred Charge - Colossus Blade 
+// Bul-Kathos Tribal Guardian - Colossus Sword
+
+ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb) FILTLVL<10]: %MAP-84%%NAME%
+
+// Set tier 3 Set Callouts
+//-----------------------------------------------------------------------------------
+// Trang-Ouls Wing - Cantor Trophy
+// Trang-Ouls Girth - Troll Belt
+// Trang-Ouls Claws - Heavy Bracers
+// Ondals Almighty - Spired Helm
+// Trang-Ouls Scales - Chaos Armor
+// Griswolds Redemption - Caduceus
+// Griswolds Honor - Vortex Shield
+// Deaths Hand - Leather Gloves
+
+ItemDisplay[SET !ID FILTLVL<6 (ne9 OR utc OR xmg OR uhm OR xul OR 7ws OR paf OR lgl)]: %MAP-84%%NAME%
+
+// Set tier 2 Set Callouts
+//-----------------------------------------------------------------------------------
+// Cow Kings Horns - War Hat
+// Cow Kings Hide - Studded Leather
+// Taebaeks Glory - Ward
+// Griswolds Heart - Ornate Plate
+// Griswolds Valor - Corona
+// Aldurs Stony Gaze - Hunters Guise
+
+ItemDisplay[SET !ID FILTLVL<6 (xap OR stu OR uts OR xar OR urn OR dr8)]: %MAP-84%%NAME%
+
+// Any ETH Set weapon catch rest
+ItemDisplay[SET !ID ETH WEAPON FILTLVL<5]: %MAP-84%%NAME%
+
+// Set tier 1 Set Callouts
+//-----------------------------------------------------------------------------------
+// Arcannas Flesh Light Plate
+// Natalyas Shadow - Loricated Mail
+// Natalyas Totem - Grim Helm
+// Natalyas Mark - Scissors Suwayyah
+// Cow King or Sander - Heavy Boots
+
+ItemDisplay[SET !ID FILTLVL<5 (ltp OR ucl OR xh9 OR 7qr OR vbt)]: %DOT-84%%TIER-7%%GREEN%*  %NAME%  %GREEN%*
+
+// Set tier 1 Set Callouts
+//-----------------------------------------------------------------------------------
+// Laying of Hands - Bramble Mitts
+// Najs Puzzler//  Elder Staff
+// Aldurs Advance - Battle Boots
+// Aldurs Deception - Shadow Plate
+// Immortal Kings Will - Avenger Guard
+// Immortal Kings Stone Crusher - Ogre Maul
+// Immortal Kings Detail - War Belt
+// Immortal Kings Forge - War Gauntlets
+// Immortal Kings Pillar - War Boots
+// Natalyas Soul - Mesh Boots
+// Tal Rashas Lidless Eye - Swirling Crystal
+// Tal Rashas Horadric Crest - Death Mask
+// Tal Rashas Fine-Spun Cloth - Mesh Belt
+// Trang-Ouls Guise - Bone Visage
+// Immortal Kings Soul Cage - Sacred Armor
+// Guillaumes Face - Winged Helm
+// Mavinas True Sight - Diadem
+// Mavinas Caster - Grand Matron Bow
+// Mavinas Embrace - Kraken Shell
+// Mavinas Icy Clutch - Battle Gauntlets
+// Mavinas Tenet - Sharkskin Belt
+// Tal Rashas Guardianship - Lacquered Plate
+// Hsaru or Hwanin - Belt
+
+ItemDisplay[SET !ID FILTLVL<5 (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR uar OR xhm OR ci3 OR amc OR uld OR xtg OR zvb OR uth OR mbl)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+
+// Set tier 0 Set Callouts
+//-----------------------------------------------------------------------------------
+
+// Rite of Passage - Demonhide Boots
+// Haemosus Adament - Cuirass
+// Aldurs Rhythm - Jagged Star
+// Najs Circlet - Circlet
+// Najs Light Plate - Hellforge Plate
+// Dangoons Teaching - Reinforced Mace
+
+ItemDisplay[SET !ID FILTLVL<4 (xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%%NAME%
+
+// Ring, Amulet, Jewel, GC
 ItemDisplay[UNI !ID (rin OR amu OR jew OR cm3)]: %BORDER-62%%NAME%%MAP-0E%
-ItemDisplay[SET !ID amu CLVL>89 FILTLVL>4]: // Hide set amulets after 89
-ItemDisplay[SET !ID rin CLVL>89 FILTLVL>4]: // Hide set rings after 89
-ItemDisplay[SET !ID (rin OR amu)]: %BORDER-62%%NAME%%MAP-84%
 
-//+-----------+
-//� Set Items �
-//+-----------+
-//Aldur's Watchtower (Druid)
-ItemDisplay[SET !ID (9mt OR uul) FILTLVL>3]:
-//Angelic Raiment
-ItemDisplay[SET !ID (rng OR sbr) FILTLVL>3]:
-//Arcanna's Tricks
-ItemDisplay[SET !ID (skp OR ltp OR wst) FILTLVL>3]:
-//Arctic Gear
-ItemDisplay[SET !ID (vbl OR qui OR swb) FILTLVL>3]:
-//Berserker's Arsenal
-ItemDisplay[SET !ID (hlm OR spl OR 2ax) FILTLVL>3]: 
-//Bul-Kathos' Children
-ItemDisplay[SET !ID (7gd OR 7fb) FILTLVL>3]:
-//Cathan's Traps
-ItemDisplay[SET !ID (msk OR chn OR bst) FILTLVL>3]:
-//Civerb's Vestments
-ItemDisplay[SET !ID (gsc OR lrg) FILTLVL>3]:
-//Cleglaw's Brace
-ItemDisplay[SET !ID (lsd OR sml OR mgl) FILTLVL>3]:
-//Cow King's Leathers
-ItemDisplay[SET !ID (xap OR stu OR vbt) FILTLVL>3]:
-//Death's Disguise
-ItemDisplay[SET !ID (wsd OR lbl OR lgl) FILTLVL>3]:
-//Griswold's Legacy
-ItemDisplay[SET !ID (xar OR 7ws OR urn OR paf) FILTLVL>3]:
-//Heaven's Brethren
-ItemDisplay[SET !ID (xrs OR 7ma) FILTLVL>3]:
-//Hsaru's Defense
-ItemDisplay[SET !ID (buc OR mbt) FILTLVL>3]:
-//Hwanin's Majesty
-ItemDisplay[SET !ID (9vo OR xcl OR xrn OR mbl) FILTLVL>3]:
-//Immortal King
-ItemDisplay[SET !ID (ba5 OR 7m7 OR zhb OR xhg OR xhb OR uar) FILTLVL>3]:
-//Infernal Tools
-ItemDisplay[SET !ID (dgr OR gwn OR cap) FILTLVL>3]:
-//Iratha's Finery
-ItemDisplay[SET !ID (crn OR tbl OR tgl) FILTLVL>3]:
-//Isenhart's Armory
-ItemDisplay[SET !ID (bsd OR brs OR fhl OR gts) FILTLVL>3]:
-//M'avina's Battle Hymn (Amazon)
-ItemDisplay[SET !ID (ci3 OR amc OR uld OR xtg OR zvb) FILTLVL>3]:
-//Milabrega's Regalia
-ItemDisplay[SET !ID (wsp OR kit OR aar) FILTLVL>3]:
-//Naj's Ancient Vestige
-ItemDisplay[SET !ID (ci0 OR 6cs OR ult) FILTLVL>3]:
-//Natalya's Odium (Assassin)
-ItemDisplay[SET !ID (xh9 OR ucl OR xmb) FILTLVL>3]:
-//Orphan's Call
-ItemDisplay[SET !ID (xml OR xvg OR ztb) FILTLVL>3]:
-//Sander's Folly
-ItemDisplay[SET !ID (bwn OR vgl) FILTLVL>3]:
-//Sazabi's Grand Tribute
-ItemDisplay[SET !ID (xhl OR 7ls OR upl) FILTLVL>3]:
-//Sigon's Complete Steel
-ItemDisplay[SET !ID (ghm OR gth OR hbt OR tow OR hbl OR hgl) FILTLVL>3]:
-//Tal Rasha's Wrappings (Sorceress)
-ItemDisplay[SET !ID (oba OR xsk OR uth OR zmb) FILTLVL>3]:
-//Tancred's Battlegear
-ItemDisplay[SET !ID (bhm OR ful OR mpi) FILTLVL>3]:
-//The Disciple
-ItemDisplay[SET !ID (uui OR xlb OR umc) FILTLVL>3]:
-//Trang-Oul's Avatar (Necro)
-ItemDisplay[SET !ID (uh9 OR xul OR ne9 OR utc) FILTLVL>3]:
-//Vidala's Rig
-ItemDisplay[SET !ID (lea OR tbt OR lbb) FILTLVL>3]:
-
-//Catch-All for Sets and Uniques
-// ItemDisplay[SET rin ED<20 FILTLVL>3]: //Hide bad set rings
-ItemDisplay[SET amu !CLSK1=2 FILTLVL>3]: //Hide bad set amulets
-
-ItemDisplay[UNI !ID !(cm1 OR cm2 OR cm3)]: %BORDER-0E%%NAME%%MAP-0E%
-ItemDisplay[SET !ID]: %BORDER-84%%NAME%%MAP-84%
+ItemDisplay[UNI !ID FILTLVL>3]: //Hide non callouts
+ItemDisplay[SET !ID FILTLVL>3]: //Hide non callouts
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????
 //?                                     MAG Charms, Circ, Amu                                     ?
