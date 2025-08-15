@@ -1472,11 +1472,11 @@ ItemDisplay[(NMAG OR MAG) ID WP13 FILTLVL>2 !(SK96=3 OR SK97=3 OR SK98=3 OR SK99
 // Use the rule below to change the color of the base name of ethereal non-magical items. Default
 // color for this rule if used is to set it to %RED%.
 ItemDisplay[(SET OR UNI) ID SOCK>0]: %NAME% %RED%[%WHITE%%SOCKETS%%RED%]%CONTINUE%
-ItemDisplay[ETH UNI]: %BORDER-62%%RED%ETH %GOLD%%NAME%%MAP-0E%%CONTINUE%
-ItemDisplay[ETH SET]: %BORDER-84%%RED%ETH %GREEN%%NAME%%MAP-84%%CONTINUE%
-ItemDisplay[ETH MAG]: %RED%ETH %BLUE%%NAME%%CONTINUE%
-ItemDisplay[ETH NMAG]: %RED%ETH %GRAY%%NAME%%CONTINUE%
-ItemDisplay[ETH RARE]: %RED%ETH %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[ETH UNI]: %GRAY%[ETH] %GOLD%%NAME%%%CONTINUE%
+ItemDisplay[ETH SET]: %GRAY%[ETH] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[ETH MAG]: %GRAY%[ETH] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[ETH NMAG]: %GRAY%[ETH] %GRAY%%NAME%%CONTINUE%
+ItemDisplay[ETH RARE]: %GRAY%[ETH] %YELLOW%%NAME%%CONTINUE%
 
 ItemDisplay[NMAG !ETH]: %GRAY%%NAME%%CONTINUE%
 ItemDisplay[MAG !ETH]: %BLUE%%NAME%%CONTINUE%
@@ -2021,8 +2021,8 @@ ItemDisplay[cm2 (STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2 OR STAT357>2 O
 ItemDisplay[cm1 !UNI]: %CONTINUE%
 
 ItemDisplay[cm1 MANA>14]: %CL%%BLUE%Small Charm%CONTINUE% %BLUE%Mana%CONTINUE%
-ItemDisplay[cm1 (MANA>12 AND LIFE>15)]: %RED%Life%TAN%+%PURPLE%%MANA%Mana%CL%%BLUE%Small Charm%PX-9B%%MAP-97%
-ItemDisplay[cm1 (MANA>12 AND LIFE>11)]: %RED%Life%TAN%+%PURPLE%%MANA%Mana%CL%%BLUE%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 (MANA>12 AND LIFE>15)]: %RED%%LIFE%Life %PURPLE%%MANA%Mana%CL%%BLUE%Small Charm%PX-9B%%MAP-97%
+ItemDisplay[cm1 (MANA>12 AND LIFE>11)]: %RED%%LIFE%Life %PURPLE%%MANA%Mana%CL%%BLUE%Small Charm%PX-9B%%MAP-97%
 ItemDisplay[cm1 (MANA>12 AND FHR>0)]: %ORANGE%FHR %PURPLE%%MANA%Mana%CL%%BLUE%Small Charm%PX-9B%%MAP-97%
 ItemDisplay[cm1 (MANA>12 AND MFIND>0)]: %GREEN%%MFIND%MF %PURPLE%%MANA%Mana%CL%%BLUE%Small Charm%PX-9B%%MAP-97%
 ItemDisplay[cm1 ((MAXDMG>2 AND LIFE>0) OR (MAXDMG>0 AND LIFE>9))]: %TAN%%MAXDMG% Max%GRAY%/%RED%%LIFE% Life%CL%%BLUE%Small Charm%PX-9B%%MAP-97%
